@@ -37,9 +37,6 @@ namespace Arrays
             return result;
         }
 
-        static void Main(string[] args)
-        {
-
-        }
+        
     }
 }

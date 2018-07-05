@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ArraysAndStrings.cs" />
     <Compile Include="FindDiagonalOrder.cs" />
+    <Compile Include="MedianOfTwoSortedArrays.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpiralMatrix.cs" />

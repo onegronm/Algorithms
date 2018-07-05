@@ -8,6 +8,10 @@ namespace Arrays
 {
     public class TwoSum
     {
+        // Time complexity: O(n). We traverse the list containing n elements exactly twice. 
+        // Hash table reduces lookup time to O(1)
+        // Space complexity: O(n). The space required depends on the number of items stored in the hash table,
+        // which stores exactly n elements.
         public int[] FindTwoSum(int[] nums, int target)
         {
             List<int> result = new List<int>();
