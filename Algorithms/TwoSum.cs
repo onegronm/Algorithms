@@ -12,7 +12,6 @@ namespace Arrays
         {
             List<int> result = new List<int>();
 
-
             if (nums == null || nums.Length == 0) return result.ToArray();
 
             // key is the number, value is the index of the last occurrence of the number in the input array
@@ -21,7 +20,7 @@ namespace Arrays
             for (int i = 0; i < nums.Length; i++)
             {
                 int found;
-                if(!dic.TryGetValue(nums[i], out found))
+                if (!dic.TryGetValue(nums[i], out found))
                 {
                     dic.Add(nums[i], i);
                 }
@@ -37,11 +36,15 @@ namespace Arrays
 
                 int n = target - val;
 
+                Console.WriteLine(val + " " + n);
+
+
                 // int index = Array.IndexOf(nums, n); // this has O(n) runtime
                 int index = -1;
-                dic.TryGetValue(n, out index);
 
-                if(index >= 0 && i != index) // make sure we're not using the same number
+                Console.WriteLine(index);
+
+                if (dic.TryGetValue(n, out index) && index >= 0 && i != index) // make sure we're not using the same number
                 {
                     result.Add(i);
                     result.Add(index);
