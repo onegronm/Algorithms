@@ -12,6 +12,7 @@ namespace Arrays
         {
             List<int> result = new List<int>();
 
+
             if (nums == null || nums.Length == 0) return result.ToArray();
 
             // key is the number, value is the index of the last occurrence of the number in the input array
