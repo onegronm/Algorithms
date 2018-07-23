@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayPartitionI.cs" />
     <Compile Include="ArraysAndStrings.cs" />
+    <Compile Include="ContainerWithMostWater.cs" />
     <Compile Include="FindDiagonalOrder.cs" />
     <Compile Include="MedianOfTwoSortedArrays.cs" />
     <Compile Include="Program.cs" />
