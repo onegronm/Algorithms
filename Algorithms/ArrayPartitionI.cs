@@ -17,9 +17,22 @@ namespace Arrays
         /// <returns></returns>
         public int ArrayPairSum(int[] nums)
         {
+
+            // Optimized solution using a hash map
+            // Time complexity: O(n). The whole hashmap arr of size n is traversed only once.
+            // Space complexity: O(n). A hashmap arr of size n is used.
+
+
+
+
+
             return 0;
 
             /* My N Log N brute force solution
+            
+            Time complexity: O(nlogn). Sorting takes O(nlogn) time. We iterate over the array only once.
+            Space complexity: O(1). Constant extra space is used.
+
             int sum = 0;
 
             Array.Sort(nums);
