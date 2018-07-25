@@ -108,33 +108,33 @@ namespace Arrays
             return arr;
         }
 
-        public static void Main()
-        {
-            int[] nums1 = { 1, 3 };
-            int[] nums2 = { 2 };
+        //public static void Main()
+        //{
+        //    int[] nums1 = { 1, 3 };
+        //    int[] nums2 = { 2 };
 
-            MedianOfTwoSortedArrays main = new MedianOfTwoSortedArrays();
+        //    MedianOfTwoSortedArrays main = new MedianOfTwoSortedArrays();
 
-            var a = main.JoinArrays(nums1, nums2);
+        //    var a = main.JoinArrays(nums1, nums2);
             
 
-            int[] nums3 = { 1, 2 };
-            int[] nums4 = { 3, 4 };
+        //    int[] nums3 = { 1, 2 };
+        //    int[] nums4 = { 3, 4 };
 
-            var b = main.JoinArrays(nums3, nums4);
-            var b2 = main.FindMedianSortedArrays(nums3, nums4);
+        //    var b = main.JoinArrays(nums3, nums4);
+        //    var b2 = main.FindMedianSortedArrays(nums3, nums4);
 
-            int[] nums5 = { 1};
-            int[] nums6 = { 4, 2 };
+        //    int[] nums5 = { 1};
+        //    int[] nums6 = { 4, 2 };
 
-            var c = main.JoinArrays(nums5, nums6);
+        //    var c = main.JoinArrays(nums5, nums6);
 
-            int[] nums7 = { 1, 3, 5, 7, 9 };
-            int[] nums8 = { 2, 4, 6, 8, 10 };
+        //    int[] nums7 = { 1, 3, 5, 7, 9 };
+        //    int[] nums8 = { 2, 4, 6, 8, 10 };
 
-            var d = main.JoinArrays(nums7, nums8);
-            var d2 = main.FindMedianSortedArrays(nums7, nums8);
+        //    var d = main.JoinArrays(nums7, nums8);
+        //    var d2 = main.FindMedianSortedArrays(nums7, nums8);
 
-        }
+        //}
     }
 }

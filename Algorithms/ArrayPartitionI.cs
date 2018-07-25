@@ -8,6 +8,15 @@ namespace Arrays
 {
     public class ArrayPartitionI
     {
+        public static void Main(string[] args)
+        {
+            ArrayPartitionI program = new ArrayPartitionI();
+
+            int[] nums = { 1, 3, 2, 2 };
+
+            var result = program.ArrayPairSum(nums);
+        }
+
         /// <summary>
         /// Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible. 
         /// n is a positive integer, which is in the range of [1, 10000].
@@ -22,11 +31,24 @@ namespace Arrays
             // Time complexity: O(n). The whole hashmap arr of size n is traversed only once.
             // Space complexity: O(n). A hashmap arr of size n is used.
 
+            int[] arr = new int[20001];
 
+            int lim = 10000;
 
+            foreach (int num in nums)
+            {
+                arr[num + lim]++;
+            }
 
+            int d = 0, sum = 0;
 
-            return 0;
+            for (int i = -10000; i <= 10000; i++)
+            {
+                sum += (arr[i + lim] + 1 - d) / 2 * i;
+                d = (2 + arr[i + lim] - d) % 2;
+            }
+
+            return sum;
 
             /* My N Log N brute force solution
             
