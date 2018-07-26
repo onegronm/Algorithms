@@ -8,14 +8,14 @@ namespace Arrays
 {
     public class ArrayPartitionI
     {
-        public static void Main(string[] args)
-        {
-            ArrayPartitionI program = new ArrayPartitionI();
+        //public static void Main(string[] args)
+        //{
+        //    ArrayPartitionI program = new ArrayPartitionI();
 
-            int[] nums = { 1, 3, 2, 2 };
+        //    int[] nums = { 1, 3, 2, 2 };
 
-            var result = program.ArrayPairSum(nums);
-        }
+        //    var result = program.ArrayPairSum(nums);
+        //}
 
         /// <summary>
         /// Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible. 
@@ -42,10 +42,13 @@ namespace Arrays
 
             int d = 0, sum = 0;
 
-            for (int i = -10000; i <= 10000; i++)
+            for (int number = -10000; number <= 10000; number++)
             {
-                sum += (arr[i + lim] + 1 - d) / 2 * i;
-                d = (2 + arr[i + lim] - d) % 2;
+                int numberIndex = number + lim;
+                int freq = arr[numberIndex];
+
+                sum += ((freq + 1 - d) / 2) * number; // the frequency calculation is very confusing
+                d = (2 + freq - d) % 2;
             }
 
             return sum;

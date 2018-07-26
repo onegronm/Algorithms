@@ -46,6 +46,7 @@
     <Compile Include="ArraysAndStrings.cs" />
     <Compile Include="ContainerWithMostWater.cs" />
     <Compile Include="FindDiagonalOrder.cs" />
+    <Compile Include="MaximumSubarray.cs" />
     <Compile Include="MedianOfTwoSortedArrays.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
