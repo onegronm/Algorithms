@@ -17,12 +17,14 @@ namespace Arrays
             int[] nums3 = { -1, -2 };
             int[] nums4 = { -2, -1 };
             int[] nums5 = { -1 };
+            int[] nums6 = { 1, 2, -1, -2, 2, 1, -2, 1, 4, -5, 4 };
 
             int result = program.MaxSubArray(nums);
             int result2 = program.MaxSubArray(nums2);
             int result3 = program.MaxSubArray(nums3);
             int result4 = program.MaxSubArray(nums4);
             int result5 = program.MaxSubArray(nums5);
+            int result6 = program.MaxSubArray(nums6);
 
             Console.WriteLine(result);
             Console.Read();
@@ -30,11 +32,7 @@ namespace Arrays
 
         public int MaxSubArray(int[] nums)
         {
-            // let's try a different approach with recursion
-            // on each function call pass the sum of ignored I and J
-
             int sum = 0;
-            int max = 0;
 
             if (nums == null || nums.Length == 0)
                 return sum;
@@ -43,47 +41,38 @@ namespace Arrays
             foreach (int num in nums)
                 sum += num;
 
-            max = sum;
-
+            int max = sum;
+            
             int i = 0, j = nums.Length - 1;
 
-            int totalIgnoredI = 0;
-            int totalIgnoredJ = 0;
+            int sumOfDiscardedNumbers = 0;
 
             while (i < j)
             {
-                int subtractLeft = sum - nums[i] - totalIgnoredI;
-                int subtractRight = sum - nums[j] - totalIgnoredJ;
+                int leftArraySum = sum - nums[j] - sumOfDiscardedNumbers;
+                int rightArraySum = sum - nums[i] - sumOfDiscardedNumbers;                
 
-                bool found = false;
-
-                if (subtractLeft > max)
+                if (leftArraySum > max)
                 {
-                    max = subtractLeft;
-                    totalIgnoredI += nums[i];
-                    i++;
-                    found = true;
-
+                    max = leftArraySum;
                 }
 
-                if (subtractRight > max)
+                if (rightArraySum > max)
                 {
-                    max = subtractRight;
-                    totalIgnoredJ += nums[j];
-                    j--;
-                    found = true;
+                    max = rightArraySum;
                 }
 
-                if (!found)
+                if (rightArraySum > leftArraySum)
                 {
-                    totalIgnoredJ += nums[j];
-                    totalIgnoredI += nums[i];
-
+                    sumOfDiscardedNumbers += nums[i];
                     i++;
+                }
+                else
+                {
+                    sumOfDiscardedNumbers += nums[j];
                     j--;
-
-                }                
-            }
+                }                    
+            } 
 
             return max;
         }
