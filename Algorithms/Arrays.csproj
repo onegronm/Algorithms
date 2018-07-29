@@ -47,6 +47,7 @@
     <Compile Include="BestTimeToBuyAndSellStockII.cs" />
     <Compile Include="ContainerWithMostWater.cs" />
     <Compile Include="FindDiagonalOrder.cs" />
+    <Compile Include="MajorityElement.cs" />
     <Compile Include="MaximumSubarray.cs" />
     <Compile Include="MedianOfTwoSortedArrays.cs" />
     <Compile Include="Program.cs" />
