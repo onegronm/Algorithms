@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ArrayPartitionI.cs" />
     <Compile Include="ArraysAndStrings.cs" />
+    <Compile Include="BestTimeToBuyAndSellStockII.cs" />
     <Compile Include="ContainerWithMostWater.cs" />
     <Compile Include="FindDiagonalOrder.cs" />
     <Compile Include="MaximumSubarray.cs" />
