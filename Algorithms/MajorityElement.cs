@@ -8,6 +8,11 @@ namespace Arrays
 {
     public class MajorityElement
     {
+        // Time complexity: O(n). We iterate over nums once and make a constant dictionary insertion
+        // on each iteration. Therefore, the algorithm runs in O(n) time.
+        // Space complexity: O(n). Dictionary can contain at most n-(n/2) associations so it occupies O(n) space.
+        // This is because the array of length n can contain n distinct values. Since the array is guaranteed to contain
+        // a majority element
         public int FindMajorityElement(int[] nums)
         {
             // first build a number frequency table
