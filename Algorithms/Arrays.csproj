@@ -50,6 +50,7 @@
     <Compile Include="MajorityElement.cs" />
     <Compile Include="MaximumSubarray.cs" />
     <Compile Include="MedianOfTwoSortedArrays.cs" />
+    <Compile Include="MergingMeetingTimes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpiralMatrix.cs" />

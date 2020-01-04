@@ -47,7 +47,6 @@ namespace Arrays
             }
             return result;
         }
-
         
         // Time complexity =  O(a log a + b log b)
         // Space complexity = O(a + b)
@@ -73,6 +72,7 @@ namespace Arrays
         // Optimized using a Dictionary
         // Time complexity = O(n) where n is the length of string a
         // Space complexity = O(n) where total number of items in dictionary is at most 2n (characters in a + b)
+
         public bool CheckPermutation(string a, string b)
         {
             if (a == b) return true;
@@ -128,8 +128,7 @@ namespace Arrays
 
         }
 
-        // you can treat characters by their integer representatio
-        
+        // you can treat characters by their integer representation        
         public bool CheckPermutation2(string a, string b)
         {
             if (a.Length != b.Length) return false;
@@ -301,6 +300,30 @@ namespace Arrays
             }
 
             return -1;
+        }
+
+        public void Run()
+        {
+            // 1. Is Unique
+            bool bResult = IsUnique("hello");
+            bool bResult2 = IsUnique("hh");
+            bool bResult3 = IsUnique("h");
+            bool bResult4 = IsUnique("");
+            bool bResult5 = IsUnique("abcde");
+
+            // 2. Check permutation
+            bResult = CheckPermutation2("hello", "olleh");
+            bResult2 = CheckPermutation2("", "");
+            bResult3 = CheckPermutation2("hello", "lleho");
+            bResult4 = CheckPermutation2("hello", "world");
+
+            // 3. URLify
+            string sResult = URLify("Mr John Smith     ", 13);
+
+            // 4. Palindrome Permutation
+            bResult = isPermutationOfPalindrome("tact coa");
+            bResult2 = isPermutationOfPalindrome("otto");
+            bResult3 = isPermutationOfPalindrome("hello");
         }
     }
 }

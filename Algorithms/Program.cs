@@ -8,31 +8,35 @@ namespace Arrays
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
-        //    ArraysAndStrings arraysAndStrings = new ArraysAndStrings();
+        /*
+         * a single doubling append is an O(n) time operation since we have to
+         * copy all n items from our array.
+         * 
+         * while the time cost of each special O(n) doubling append doubles 
+         * each time, the number of O(1)O(1) appends you get until the next
+         * doubling append also doubles. 
+         * 
+         * This kind of "cancels out," and we can say each append has an average 
+         * cost or amortized cost of O(1). 
+         * 
+         * If we were worried about that O(n)O(n)-time worst-case cost of appends, 
+         * we might try to use a normal, non-dynamic array.
+         * 
+         * The advantage of dynamic arrays over arrays is that you don't have to 
+         * specify the size ahead of time, but the disadvantage is that some appends
+         * can be expensive. That's the tradeoff.
+         */
 
-        //    // 1. Is Unique
-        //    bool bResult = arraysAndStrings.IsUnique("hello");
-        //    bool bResult2 = arraysAndStrings.IsUnique("hh");
-        //    bool bResult3 = arraysAndStrings.IsUnique("h");
-        //    bool bResult4 = arraysAndStrings.IsUnique("");
-        //    bool bResult5 = arraysAndStrings.IsUnique("abcde");
 
-        //    // 2. Check permutation
-        //    bResult = arraysAndStrings.CheckPermutation2("hello", "olleh");
-        //    bResult2 = arraysAndStrings.CheckPermutation2("", "");
-        //    bResult3 = arraysAndStrings.CheckPermutation2("hello", "lleho");
-        //    bResult4 = arraysAndStrings.CheckPermutation2("hello", "world");
+        static void Main(string[] args)
+        {            
+            ArraysAndStrings arraysAndStrings = new ArraysAndStrings();
 
-        //    // 3. URLify
-        //    string sResult = arraysAndStrings.URLify("Mr John Smith     ", 13);
+            arraysAndStrings.Run();
 
-        //    // 4. Palindrome Permutation
-        //    bResult = arraysAndStrings.isPermutationOfPalindrome("tact coa");
-        //    bResult2 = arraysAndStrings.isPermutationOfPalindrome("otto");
-        //    bResult3 = arraysAndStrings.isPermutationOfPalindrome("hello");
+            MergingMeetingTimes mergingMeetingTimes = new MergingMeetingTimes();
 
-        //}
+            Console.Read();
+        }
     }
 }
