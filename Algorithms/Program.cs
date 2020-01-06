@@ -84,7 +84,7 @@ namespace Arrays
     .Contains() depends on the underlying data structure – in the case of a List, O(n)
 
     .ToList()
-    it is an O(n) operation though it will likely only require attention in performance critical operations.
+    Constructor creates new List<T>(IEnumerable<T>). It is an O(n) operation though it will likely only require attention in performance critical operations.
     The ToList() operation will use the List(IEnumerable<T> collection) constructor. This constructor must make a copy of the array (more generally IEnumerable<T>)
     A List<T> also uses a construct called a dynamic array which needs to be resized on demand, this resize event copies the contents of an old array to the new array. So it starts off small and increases in size if required.
     This is the difference between the Capacity and Count attributes on List<T>. 
@@ -96,5 +96,7 @@ namespace Arrays
     .Select()
 
     .FirstOrDefault()
+
+    https://referencesource.microsoft.com/#System.Core/System/Linq/Enumerable.cs
     https://www.nerdhold.com/coder/2014/11/25/linq-and-time-complexity/
  */

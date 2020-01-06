@@ -105,7 +105,7 @@ namespace Arrays
             // Initialize mergedMeetings with th earliest meeting
             mergedMeetings.Add(sortedMeetings[0]);
 
-            // merging is done in one pass and takes n time
+            // merging is done in one pass and takes n time O(n)
             foreach (var currentMeeting in sortedMeetings)
             {
                 var lastMergedMeeting = mergedMeetings.Last();
@@ -131,12 +131,14 @@ namespace Arrays
                 Console.WriteLine(item.ToString());
             }
 
-            // runtime = O(n + n log n) = O(n lgn)
+            // runtime = O(n log n + n + n) = O(n lgn + 2n) = O(n lg n)
         }
 
         private static List<Meeting> SortList(List<Meeting> meetingRanges)
         {
-            // sorting with order by takes n lg n time (quickSort)
+            // sorting with order by takes O(n lg n time) time (quickSort)
+            // .ToList() takes O(n) time
+            // total = n lg n + n = n lg n
 
             // make a copy so we don't destroy the input
             return meetingRanges.Select(m => new Meeting(m.StartTime, m.EndTime))
