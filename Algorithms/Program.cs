@@ -25,6 +25,11 @@ namespace Arrays
          * The advantage of dynamic arrays over arrays is that you don't have to 
          * specify the size ahead of time, but the disadvantage is that some appends
          * can be expensive. That's the tradeoff.
+         
+         - Can we solve the problem in one pass?
+         - Is the input random? Does it require sorting?
+
+
          */
 
 
@@ -38,17 +43,18 @@ namespace Arrays
                 new Meeting(0,1), new Meeting(3, 5), new Meeting(4, 8), new Meeting(9, 10)
             });
 
+            MergingMeetingTimes.Merge_ranges_extra_space(new List<Meeting> {
+                new Meeting(0,1), new Meeting(3, 5), new Meeting(4, 8), new Meeting(9, 10)
+            });
+
             Console.Read();
         }
     }
 }
 
-
-
-
 /*
 
-    .OrderBy()
+    .OrderBy() - O (n lg n)
 
     This method is implemented by using deferred execution. The immediate return value is an
     object that stores all the information that is required to perform the action. The query
@@ -59,7 +65,7 @@ namespace Arrays
     Mathematical analysis of quicksort shows that, on average, the algorithm takes O(n log n) 
     comparisons to sort n items. In the worst case, it makes O(n2) comparisons, though this behavior is RARE.
     
-    .Add() 
+    .Add() - O(1), O(n) worst case
     
     operation runs in O(1) time. List is a dynamic array with a number of elements
     that are needed before resizing is required (capacity). If Count exceeds Capacity while

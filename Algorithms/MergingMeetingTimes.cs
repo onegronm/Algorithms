@@ -144,6 +144,70 @@ namespace Arrays
             return meetingRanges.Select(m => new Meeting(m.StartTime, m.EndTime))
                 .OrderBy(m => m.StartTime).ToList();
         }
+
+        private static List<Meeting> SortListDescending(List<Meeting> meetingRanges)
+        {
+            return meetingRanges.Select(m => new Meeting(m.StartTime, m.EndTime))
+                .OrderByDescending(m => m.StartTime).ToList();
+
+            // n lg n + n
+        }
+
+
+        // Could we do this "in place" on the input list and save some space? What are the pros and cons of doing this in place?
+
+        /// <summary>
+        /// Method that takes a set of intervals, merges overlapping intervals and prints the result. 
+        /// A O(n Log n) and O(1) Extra Space Solution.
+        /// </summary>
+        /// <param name="meetingTimeRanges"></param>
+        public static void Merge_ranges_extra_space(List<Meeting> meetingTimeRanges)
+        {
+            /*
+            
+            We can avoid use of extra space by doing merge operations in-place. Below are detailed steps.
+
+            1) Sort all intervals in decreasing order of start time.
+            2) Traverse sorted intervals starting from first interval, 
+                do following for every interval.
+                    a) If current interval is not first interval and it 
+                        overlaps with previous interval, then merge it with
+                        previous interval. Keep doing it while the interval
+                        overlaps with the previous one.         
+                    b) Else add current interval to output list of intervals.
+            */
+
+            // Sort Intervals in decreasing order of start time 
+            var sortedMeetings = SortListDescending(meetingTimeRanges);
+
+            int index = 0;
+            // Traverse sorted intervals starting from first interval
+            // The current interval is the first element of the list so start from index 1
+            for (int i = 1; i < sortedMeetings.Count; i++)
+            {
+                // If this is not first Interval and overlaps  
+                // with the previous one 
+                if (sortedMeetings[index].EndTime >= sortedMeetings[i].StartTime)
+                {
+                    // Merge previous and current intervals
+                    sortedMeetings[index].EndTime = Math.Max(sortedMeetings[index].EndTime, sortedMeetings[i].EndTime);
+                    sortedMeetings[index].StartTime = Math.Min(sortedMeetings[index].StartTime, sortedMeetings[i].StartTime);
+                }
+                else
+                {
+                    sortedMeetings[index] = sortedMeetings[i];
+                    index++;
+                }
+            }
+
+            // print results
+            Console.WriteLine("Merging Meeting Times:");
+            foreach (var item in sortedMeetings)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
+
     }
 
     /// <summary>
