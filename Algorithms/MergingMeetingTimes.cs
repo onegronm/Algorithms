@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -161,7 +162,7 @@ namespace Arrays
         /// A O(n Log n) and O(1) Extra Space Solution.
         /// </summary>
         /// <param name="meetingTimeRanges"></param>
-        public static void Merge_ranges_extra_space(List<Meeting> meetingTimeRanges)
+        public static List<Meeting> Merge_ranges_extra_space(List<Meeting> meetingTimeRanges)
         {
             /*
             
@@ -187,7 +188,7 @@ namespace Arrays
             {
                 // If this is not first Interval and overlaps  
                 // with the previous one 
-                if (sortedMeetings[index].EndTime >= sortedMeetings[i].StartTime)
+                if (sortedMeetings[index].StartTime <= sortedMeetings[i].EndTime)
                 {
                     // Merge previous and current intervals
                     sortedMeetings[index].EndTime = Math.Max(sortedMeetings[index].EndTime, sortedMeetings[i].EndTime);
@@ -195,17 +196,26 @@ namespace Arrays
                 }
                 else
                 {
-                    sortedMeetings[index] = sortedMeetings[i];
                     index++;
+
+                    if (index > 1)
+                    {
+                        sortedMeetings[index] = sortedMeetings[i];
+                    }
                 }
             }
 
             // print results
             Console.WriteLine("Merging Meeting Times:");
-            foreach (var item in sortedMeetings)
+            // Now arr[0..index-1] stores the merged Intervals  
+            Console.WriteLine("The Merged Intervals are: ");
+            for (int i = 0; i <= index; i++)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine("[" + sortedMeetings[i].StartTime + ","
+                                            + sortedMeetings[i].EndTime + "]");
             }
+
+            return sortedMeetings;
         }
 
     }
@@ -231,4 +241,6 @@ namespace Arrays
             return $"({StartTime}, {EndTime})";
         }
     }
+
+    
 }
