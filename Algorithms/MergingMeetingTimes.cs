@@ -45,7 +45,7 @@ namespace Arrays
     /// </summary>
     public static class MergingMeetingTimes
     {
-        public static void Merge_ranges(List<Meeting> meetingTimeRanges)
+        public static List<Meeting> Merge_ranges(List<Meeting> meetingTimeRanges)
         {
             List<Meeting> mergedMeetings = new List<Meeting>();
 
@@ -132,6 +132,7 @@ namespace Arrays
                 Console.WriteLine(item.ToString());
             }
 
+            return mergedMeetings;
             // runtime = O(n log n + n + n) = O(n lgn + 2n) = O(n lg n)
         }
 
