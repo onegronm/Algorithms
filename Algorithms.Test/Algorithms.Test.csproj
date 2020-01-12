@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="MergingMeetingTimesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReverseStringInPlaceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
