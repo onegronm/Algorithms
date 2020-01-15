@@ -49,9 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MergingMeetingTimesTest.cs" />
+    <Compile Include="Arrays_MergingMeetingTimesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReverseStringInPlaceTest.cs" />
+    <Compile Include="Arrays_ReverseStringInPlaceTest.cs" />
+    <Compile Include="Arrays_ReverseWordsInPlaceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

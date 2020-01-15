@@ -6,10 +6,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Algorithms.Test
 {
     [TestClass]
-    public class MergingMeetingTimesTest
+    public class Arrays_MergingMeetingTimesTest
     {
         [TestMethod]
-        public void TestCase1()
+        public void Arrays_TestCase1()
         {
             var result = MergingMeetingTimes.Merge_ranges_extra_space(new List<Meeting>
             {
@@ -24,7 +24,7 @@ namespace Algorithms.Test
         }
 
         [TestMethod]
-        public void TestCase2()
+        public void Arrays_TestCase2()
         {
             var result = MergingMeetingTimes.Merge_ranges(new List<Meeting>
             {

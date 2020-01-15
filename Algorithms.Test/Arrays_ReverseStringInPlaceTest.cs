@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace Algorithms.Test
 {
     [TestClass]
-    public class ReverseStringInPlaceTest
+    public class Arrays_ReverseStringInPlaceTest
     {
         [TestMethod]
-        public void ReverseStringInPlaceTest_SimpleReverseTest()
+        public void Arrays_ReverseStringInPlaceTest_SimpleReverseTest()
         {
             var actual = "hello".ToCharArray();
             var expected = "olleh".ToCharArray();
@@ -26,7 +26,7 @@ namespace Algorithms.Test
         }
 
         [TestMethod]
-        public void ReverseStringInPlaceTest_EmptyStringTest()
+        public void Arrays_ReverseStringInPlaceTest_EmptyStringTest()
         {
             var actual = "".ToCharArray();
             var expected = "".ToCharArray();
@@ -37,7 +37,7 @@ namespace Algorithms.Test
         }
 
         [TestMethod]
-        public void ReverseStringInPlaceTest_SingleCharacterStringTest()
+        public void Arrays_ReverseStringInPlaceTest_SingleCharacterStringTest()
         {
             var actual = "A".ToCharArray();
             var expected = "A".ToCharArray();
@@ -48,7 +48,7 @@ namespace Algorithms.Test
         }
 
         [TestMethod]
-        public void ReverseStringInPlaceTest_LongStringTest()
+        public void Arrays_ReverseStringInPlaceTest_LongStringTest()
         {
             var actual = "ABCDE".ToCharArray();
             var expected = "EDCBA".ToCharArray();

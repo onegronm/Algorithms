@@ -13,7 +13,7 @@ namespace Arrays
     {
         /// <summary>
         /// Time complexity: O(n)
-        /// Space complexity: constant (no additional space is needed)
+        /// Space complexity: constant (no additional space is needed) O(1)
         /// </summary>
         /// <param name="arrayOfChar"></param>
         public static void Reverse(char[] arrayOfChar)
@@ -34,6 +34,25 @@ namespace Arrays
                 // move lastIndex down one position
                 lastIndex--;
             }
+
+            // Solution
+
+            /*
+            int leftIndex = 0;
+            int rightIndex = arrayOfChars.Length - 1;
+
+            while (leftIndex < rightIndex)
+            {
+                // Swap characters
+                char temp = arrayOfChars[leftIndex];
+                arrayOfChars[leftIndex] = arrayOfChars[rightIndex];
+                arrayOfChars[rightIndex] = temp;
+
+                // Move towards middle
+                leftIndex++;
+                rightIndex--;
+            }
+            */
         }
     }
 }
