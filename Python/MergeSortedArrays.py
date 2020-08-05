@@ -10,6 +10,7 @@
 my_list     = [3, 4, 6, 10, 11, 15]
 alices_list = [1, 5, 8, 12, 14, 19]
 
+# ***** SOLUTION 1 *****
 # We could simply concatenate (join together) the two lists into one, then sort the result:
 # Time cost
 # concatenating - You are creating a new list object each time by concatenating. This requires copying all elements from the old list into a new one, plus one extra. 
@@ -17,47 +18,72 @@ alices_list = [1, 5, 8, 12, 14, 19]
 # Sorted() builds a new sorted list from an iterable 
 # average/worst-case performance is O(n log n)
 # O(n) + O(n lg n) = O(n lg n)
-# We can do better. With this algorithm, we're not really taking advantage of the fact that
 # Timsort: https://en.wikipedia.org/wiki/Timsort
 # Sorting algorithms in Python https://stackabuse.com/sorting-algorithms-in-python/#mergesort
-def merge_sorted_lists(arr1, arr2):
-	return sorted(arr1 + arr2);
-
+# def merge_sorted_lists(arr1, arr2):
+#	 return sorted(arr1 + arr2);
 # Prints [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
-print(merge_sorted_lists(my_list, alices_list))
+# print(merge_sorted_lists(my_list, alices_list))
 
+
+
+# ***** Solution 2 ******
+# We can do better. With this algorithm, we're not really taking advantage of the fact that
 # the input lists are themselves already sorted. How can we save time by using this fact?
-def merge_lists(my_list, alice_list):
-	merged_list_size = len(my_list) + len(alice_list)
-	merged_list = [None] * merged_list_size # initialize list elements with null (none) 
+# Technique: 3 pointers. One for each list.
+# Edge cases:
+# either list has no elements or 1 element
+# one list is larger than the other
+# one list runs out of elements before we finish merging
+def merge_lists(list1, list2):
+	merged_list_size = len(list1) + len(list2)
+	merged_list = [None] * merged_list_size;
 
-	current_index_alices = 0
-	current_index_mine = 0
-	current_index_merged = 0
+	merged_list_index = 0
+	list1_first_index = 0
+	list2_first_index = 0
 
-	# edge cases:
-	# 1. One or both of our input lists is 0 elements or 1 element
-	# 2. One of our input lists is longer than the other.
-	# 3. One of our lists runs out of elements before we're done merging.
+	while merged_list_index < merged_list_size:
 
-	while current_index_merged < merged_list_size:
-		first_unmerged_alices = alice_list[current_index_alices]
-		first_unmerged_mine = my_list[current_index_mine]
+		list1_exhausted = list1_first_index >= len(list1)
+		list2_exhausted = list2_first_index >= len(list2)
 
-		if first_unmerged_mine < first_unmerged_alices:
-			# next comes from my list
-			merged_list[current_index_merged] = first_unmerged_mine
-			current_index_mine += 1
-		else:
-			# next comes from Alice's list
-			merged_list[current_index_merged] = first_unmerged_alices
-			current_index_alices += 1
+		if  (not list1_exhausted and (not list2_exhausted and list1[list1_first_index] <= list2[list2_first_index])) or list2_exhausted:
+			# next item is in list 1
+			merged_list[merged_list_index] = list1[list1_first_index]
+			list1_first_index += 1 # when list 1 is exhausted, +=1 will exceed the bounds of the array in the next loop
+		elif (not list2_exhausted and (not list1_exhausted and list2[list2_first_index] <= list1[list1_first_index])) or list1_exhausted:
+			# next item is in list 2
+			merged_list[merged_list_index] = list2[list2_first_index]
+			list2_first_index += 1
+		#elif list1_exhausted: (merged in case 2)
+		#	# list 1 exhausted
+		#	merged_list[merged_list_index] = list2[list2_first_index]
+		#	list2_first_index += 1
+		#else: (merged in case 1)
+		#	# list 2 exhausted
+		#	merged_list[merged_list_index] = list1[list1_first_index]
+		#	list1_first_index += 1
 
-		current_index_merged += 1
+
+		merged_list_index += 1
+
+
+
 
 	return merged_list
+	
 
 
 print(merge_lists(my_list, alices_list))
 
+list_1 = []
+list_2 = []
 
+print(merge_lists(list_1, list_2))
+
+
+list_1 = [1]
+list_2 = []
+
+print(merge_lists(list_1, list_2))
