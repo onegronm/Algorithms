@@ -31,6 +31,7 @@ alices_list = [1, 5, 8, 12, 14, 19]
 # We can do better. With this algorithm, we're not really taking advantage of the fact that
 # the input lists are themselves already sorted. How can we save time by using this fact?
 # Technique: 3 pointers. One for each list.
+# Complexity: O(n) time and O(n) additional space
 # Edge cases:
 # either list has no elements or 1 element
 # one list is larger than the other

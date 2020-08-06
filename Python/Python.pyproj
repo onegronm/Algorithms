@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>MergeSortedArrays.py</StartupFile>
+    <StartupFile>CafeOrderChecker.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BubbleSort.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CafeOrderChecker.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MergeSortedArrays.py" />
