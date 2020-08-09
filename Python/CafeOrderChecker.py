@@ -22,6 +22,44 @@ def IsFirstComeFirstServed(take_out_orders, dine_in_orders, served_orders):
 	takeOutResult = False
 	dineInResult = False
 
+	# BONUS: a dictionary to track order count
+	# O(n + m) additional space
+	# O(n) lookup
+	served_orders_dict = {}
+	requested_orders_dict = {}
+
+	# populate dict of served orders
+	for i in served_orders:
+		if i not in served_orders_dict:
+			served_orders_dict[i] = 1 # if first key value, initialize with 1
+		else:
+			served_orders_dict[i] += 1 # if existing key value, increment count
+
+	# check take out not served
+	# populate requested orders count dict
+	for t in take_out_orders:
+		if t not in served_orders_dict:
+			raise Exception("Take out order not served!")
+		elif t not in requested_orders_dict:
+			requested_orders_dict[t] = 1
+		else:
+			requested_orders_dict[t] += 1
+
+
+	# check dine in not served
+	for d in dine_in_orders:
+		if d not in served_orders_dict:
+			raise Exception("Dine in not served!")
+		elif d not in requested_orders_dict:
+			requested_orders_dict[d] = 1
+		else:
+			requested_orders_dict[d] += 1
+
+	# check orders served but not paid
+	for o in served_orders_dict:
+		if o not in requested_orders_dict:
+			raise Exception("Order served but not paid for!")
+
 	while served_orders_index < len(served_orders):
 
 		isTakeOutExhausted = takeOut_start_index >= len(take_out_orders)
@@ -59,35 +97,58 @@ takeOut = [1, 3, 5]
 dineIn = [2, 4, 6]
 served = [1, 2, 4, 6, 5, 3]
 
-print(IsFirstComeFirstServed(takeOut, dineIn, served))
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
 
 takeOut = [17, 8, 24]
 dineIn = [12, 19, 2]
 served = [17, 8, 12, 19, 24, 2]
 
-print(IsFirstComeFirstServed(takeOut, dineIn, served))
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
 
 takeOut = [17]
 dineIn = [8]
 served = [17, 8]
 
-print(IsFirstComeFirstServed(takeOut, dineIn, served))
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
 
 takeOut = [17]
 dineIn = []
 served = [17]
 
-print(IsFirstComeFirstServed(takeOut, dineIn, served))
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
 
 takeOut = [1, 3, 13, 5]
 dineIn = [2, 4, 6]
 served = [1, 2, 4, 6, 3, 5]
 
-print(IsFirstComeFirstServed(takeOut, dineIn, served))
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
 
+# must return True (repeat order)
 takeOut = [17, 8, 24]
 dineIn = [12, 19, 2]
 served = [17, 8, 12, 19, 19, 24, 2]
+
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
+
+# take out not served
+takeOut = [17, 8, 24, 9]
+dineIn = [12, 19, 2]
+served = [17, 8, 12, 19, 24, 2]
+
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
+
+# dine in not served
+takeOut = [17, 8, 24]
+dineIn = [12, 19, 2, 10]
+served = [17, 8, 12, 19, 24, 2]
+
+# print(IsFirstComeFirstServed(takeOut, dineIn, served))
+
+# case order served but not paid for in either register
+# should throw an exception
+takeOut = [17, 8, 24]
+dineIn = [12, 19, 2]
+served = [17, 20, 8, 12, 19, 24, 2]
 
 print(IsFirstComeFirstServed(takeOut, dineIn, served))
 
