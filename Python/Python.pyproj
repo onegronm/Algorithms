@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>FizzBuzz.py</StartupFile>
+    <StartupFile>Arrays\FizzBuzz.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,19 +21,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BubbleSort.py">
+    <Compile Include="Arrays\BubbleSort.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CafeOrderChecker.py">
+    <Compile Include="Arrays\CafeOrderChecker.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FizzBuzz.py">
+    <Compile Include="Arrays\FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MergeSortedArrays.py" />
-    <Compile Include="SockMerchant.py">
+    <Compile Include="Arrays\MergeSortedArrays.py" />
+    <Compile Include="Arrays\SockMerchant.py">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Arrays\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
