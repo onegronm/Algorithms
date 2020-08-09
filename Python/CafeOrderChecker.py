@@ -1,11 +1,16 @@
 # https://www.interviewcake.com/question/python3/cafe-order-checker?course=fc1&section=array-and-string-manipulation
 # technique: pointers
 # time: O(n)
-# space: O(1) no additional space
+# space: O(1) additional space
 # edge cases
 # 1) either list is empty
 # 2) one list is longer than the other
 # 3) one list is exhausted before the other
+
+# Bonus:
+# This assumes each customer order in served_orders is unique. How can we adapt this to handle lists of customer orders with potential repeats?
+# Our implementation returns True when all the items in dine_in_orders and take_out_orders are first-come first-served in served_orders and False otherwise. That said, it'd be reasonable to raise an exception if some orders that went into the kitchen were never served, or orders were served but not paid for at either register. How could we check for those cases?
+# Our solution iterates through the customer orders from front to back. Would our algorithm work if we iterated from the back towards the front? Which approach is cleaner?
 
 # my solution
 def IsFirstComeFirstServed(take_out_orders, dine_in_orders, served_orders):
@@ -16,8 +21,6 @@ def IsFirstComeFirstServed(take_out_orders, dine_in_orders, served_orders):
 
 	takeOutResult = False
 	dineInResult = False
-
-	# can we merge both while loops below?
 
 	while served_orders_index < len(served_orders):
 
@@ -34,49 +37,23 @@ def IsFirstComeFirstServed(take_out_orders, dine_in_orders, served_orders):
         # as the current order in served_orders
 		elif (not isDineInExhausted and served_orders[served_orders_index] == dine_in_orders[dineIn_start_index]):
 			dineIn_start_index += 1
+		# if this is a repeat order, continue to the next order
+		elif served_orders_index > 1 and served_orders[served_orders_index] == served_orders[served_orders_index - 1]:
+			served_orders_index += 1
+			continue
+		# If the current order in served_orders doesn't match the current
+        # order in take_out_orders or dine_in_orders, then we're not serving first-come,
+        # first-served.
+		else:
+			return False;
 
 		served_orders_index += 1
 
-	# if the take out orders list is exhausted after completing all served orders
-	# then it is first come first served
-	if takeOut_start_index >= len(take_out_orders):
-		takeOutResult = True
+	# Check for any extra orders at the end of take_out_orders or dine_in_orders
+	if takeOut_start_index != len(take_out_orders) or dineIn_start_index != len(dine_in_orders):
+		return False;
 
-	# if the dine in orders list is exhausted after completing all served orders
-	# then it is first come first served
-	if dineIn_start_index >= len(dine_in_orders):
-		dineInResult = True
-
-	# check take out orders
-	#while served_orders_index < len(served_orders):
-
-	#	isTakeOutExhausted = takeOut_start_index >= len(take_out_orders)
-		
-	#	if not isTakeOutExhausted and served_orders[served_orders_index] == take_out_orders[takeOut_start_index]:
-	#		takeOut_start_index += 1
-
-	#	served_orders_index += 1
-
-	#if takeOut_start_index >= len(take_out_orders):
-	#	takeOutResult = True
-
-	## check dine in orders	
-	#served_orders_index = 0;
-	#while served_orders_index < len(served_orders):
-				
-	#	isDineInExhausted = dineIn_start_index >= len(dine_in_orders)
-
-	#	if not isDineInExhausted and served_orders[served_orders_index] == dine_in_orders[dineIn_start_index]:
-	#		dineIn_start_index += 1			
-
-	#	served_orders_index += 1;
-
-	#if dineIn_start_index >= len(dine_in_orders):
-	#	dineInResult = True
-
-	#print("takeout:" + str(takeOutResult))
-	#print("dinein:" + str(dineInResult))
-	return takeOutResult and dineInResult
+	return True;
 
 takeOut = [1, 3, 5]
 dineIn = [2, 4, 6]
@@ -105,6 +82,12 @@ print(IsFirstComeFirstServed(takeOut, dineIn, served))
 takeOut = [1, 3, 13, 5]
 dineIn = [2, 4, 6]
 served = [1, 2, 4, 6, 3, 5]
+
+print(IsFirstComeFirstServed(takeOut, dineIn, served))
+
+takeOut = [17, 8, 24]
+dineIn = [12, 19, 2]
+served = [17, 8, 12, 19, 19, 24, 2]
 
 print(IsFirstComeFirstServed(takeOut, dineIn, served))
 
