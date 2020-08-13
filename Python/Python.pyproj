@@ -27,7 +27,10 @@
     <Compile Include="Arrays\Arrays - DS.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Arrays\BubbleSort.py">
+    <Compile Include="Arrays\DynamicArray.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sorting\BubbleSort.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Arrays\CafeOrderChecker.py">
@@ -43,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Arrays\" />
+    <Folder Include="Sorting\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
