@@ -4,8 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>Arrays\HackerRank\Medium\SparseArrays.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,6 +29,9 @@
     <Compile Include="Arrays\HackerRank\DynamicArray.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
+    <Compile Include="Arrays\HackerRank\Medium\SparseArrays.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Arrays\HackerRank\SockMerchant.py" />
     <Compile Include="Arrays\HackerRank\SockMerchant.py" />
     <Compile Include="Arrays\InterviewCake\CafeOrderChecker.py" />
@@ -47,6 +49,7 @@
     <Folder Include="Arrays\" />
     <Folder Include="Arrays\CTCI\" />
     <Folder Include="Arrays\HackerRank\" />
+    <Folder Include="Arrays\HackerRank\Medium\" />
     <Folder Include="Arrays\InterviewCake\" />
     <Folder Include="Arrays\LeetCode\" />
     <Folder Include="Sorting\" />
