@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\LeftRotation.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,34 +22,33 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Arrays\2D Array - DS.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Arrays\Arrays - DS.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Arrays\DynamicArray.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Arrays\LeftRotation.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Arrays\HackerRank\2D Array - DS.py" />
+    <Compile Include="Arrays\HackerRank\2D Array - DS.py" />
+    <Compile Include="Arrays\HackerRank\Arrays - DS.py" />
+    <Compile Include="Arrays\HackerRank\Arrays - DS.py" />
+    <Compile Include="Arrays\HackerRank\DynamicArray.py" />
+    <Compile Include="Arrays\HackerRank\DynamicArray.py" />
+    <Compile Include="Arrays\HackerRank\LeftRotation.py" />
+    <Compile Include="Arrays\HackerRank\LeftRotation.py" />
+    <Compile Include="Arrays\HackerRank\SockMerchant.py" />
+    <Compile Include="Arrays\HackerRank\SockMerchant.py" />
+    <Compile Include="Arrays\InterviewCake\CafeOrderChecker.py" />
+    <Compile Include="Arrays\InterviewCake\CafeOrderChecker.py" />
+    <Compile Include="Arrays\InterviewCake\MergeSortedArrays.py" />
+    <Compile Include="Arrays\InterviewCake\MergeSortedArrays.py" />
     <Compile Include="Sorting\BubbleSort.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Arrays\CafeOrderChecker.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Arrays\MergeSortedArrays.py" />
-    <Compile Include="Arrays\SockMerchant.py">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Arrays\" />
+    <Folder Include="Arrays\CTCI\" />
+    <Folder Include="Arrays\HackerRank\" />
+    <Folder Include="Arrays\InterviewCake\" />
+    <Folder Include="Arrays\LeetCode\" />
     <Folder Include="Sorting\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
