@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\DynamicArray.py</StartupFile>
+    <StartupFile>Arrays\LeftRotation.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,13 +30,16 @@
     <Compile Include="Arrays\DynamicArray.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Arrays\LeftRotation.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Sorting\BubbleSort.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Arrays\CafeOrderChecker.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Arrays\FizzBuzz.py">
+    <Compile Include="FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Arrays\MergeSortedArrays.py" />
