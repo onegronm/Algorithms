@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\HackerRank\Medium\SparseArrays.py</StartupFile>
+    <StartupFile>Arrays\HackerRank\Medium\NewYearChaos.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,9 @@
     <Compile Include="Arrays\HackerRank\DynamicArray.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
+    <Compile Include="Arrays\HackerRank\Medium\NewYearChaos.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Arrays\HackerRank\Medium\SparseArrays.py">
       <SubType>Code</SubType>
     </Compile>

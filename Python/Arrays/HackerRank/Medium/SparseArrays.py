@@ -17,12 +17,14 @@ def matchingStrings(strings, queries):
 
 
 # best answer. Use a DICTIONARY with the query string as the KEY
+# O(n) time
+# O(n) space
 def matchingStringsOptimized(strings, queries):
 
 	words = {}
 
-	for i in range(len(strings)):
-		if words.get(strings[i], -1) is -1:
+	for i in range(len(strings)): # O(n)
+		if words.get(strings[i], -1) is -1: # O(1) accessing element in dictionary. Could be O(n) in worst case
 			words[strings[i]] = 1
 		else:
 			words[strings[i]] += 1
