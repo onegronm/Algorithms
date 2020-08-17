@@ -29,6 +29,9 @@
     <Compile Include="Arrays\HackerRank\DynamicArray.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
+    <Compile Include="Sorting\HackerRank\Medium\MinimumSwaps.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Arrays\HackerRank\Medium\NewYearChaos.py">
       <SubType>Code</SubType>
     </Compile>
@@ -56,6 +59,8 @@
     <Folder Include="Arrays\InterviewCake\" />
     <Folder Include="Arrays\LeetCode\" />
     <Folder Include="Sorting\" />
+    <Folder Include="Sorting\HackerRank\" />
+    <Folder Include="Sorting\HackerRank\Medium\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
