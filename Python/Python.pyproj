@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Sorting\HackerRank\Medium\MinimumSwaps.py</StartupFile>
+    <StartupFile>Arrays\LeetCode\FindNumbers.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,12 @@
     <Compile Include="Arrays\HackerRank\DynamicArray.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
     <Compile Include="Arrays\HackerRank\LeftRotation.py" />
+    <Compile Include="Arrays\LeetCode\FindNumbers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Arrays\LeetCode\MaxConsecutiveOnes.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Sorting\HackerRank\Medium\MinimumSwaps.py">
       <SubType>Code</SubType>
     </Compile>
