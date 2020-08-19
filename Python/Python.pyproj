@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\LeetCode\FindNumbers.py</StartupFile>
+    <StartupFile>Arrays\LeetCode\SortedSquares.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +33,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Arrays\LeetCode\MaxConsecutiveOnes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Arrays\LeetCode\SortedSquares.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Sorting\HackerRank\Medium\MinimumSwaps.py">
