@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\LeetCode\SortedSquares.py</StartupFile>
+    <StartupFile>Trees and Graphs\LeetCode\BinaryTreePreOrder.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -59,6 +59,9 @@
     <Compile Include="FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\BinaryTreePreOrder.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Arrays\" />
@@ -67,9 +70,14 @@
     <Folder Include="Arrays\HackerRank\Medium\" />
     <Folder Include="Arrays\InterviewCake\" />
     <Folder Include="Arrays\LeetCode\" />
+    <Folder Include="Trees and Graphs\" />
     <Folder Include="Sorting\" />
     <Folder Include="Sorting\HackerRank\" />
     <Folder Include="Sorting\HackerRank\Medium\" />
+    <Folder Include="Trees and Graphs\CTCI\" />
+    <Folder Include="Trees and Graphs\InterviewCake\" />
+    <Folder Include="Trees and Graphs\LeetCode\" />
+    <Folder Include="Trees and Graphs\HackerRank\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
