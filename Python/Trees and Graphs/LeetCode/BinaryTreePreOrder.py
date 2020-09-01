@@ -22,6 +22,7 @@ def preOrderTraversalIterative(root):
 	output = []
 
 	while stack:
+
 		root = stack.pop()
 
 		if root is not None:

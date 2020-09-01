@@ -59,6 +59,9 @@
     <Compile Include="FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\BinaryTreeInOrder.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreePreOrder.py">
       <SubType>Code</SubType>
     </Compile>
