@@ -34,3 +34,40 @@ def inorderTraversalIterative(self, root):
 
 		
 	return output
+
+# answer
+def addLeftToStack(self, stack, root):
+        while root is not None:
+            stack.append(root)
+            root = root.left
+
+def inorderTraversal(self, root: TreeNode) -> List[int]:
+        
+    stack = deque()
+    output = []
+
+    # add the leftmost branch to the stack
+    self.addLeftToStack(stack, root)
+
+    # while there are elements in the stack, pop and move the minimum
+    # possible distance to the right
+    while stack:
+        root = stack.pop()
+        output.append(root.val)
+
+        self.addLeftToStack(stack, root.right)
+
+    return output
+
+# my attempt (correct)
+def inorderTraversalRecursive(self, root: TreeNode) -> List[int]:
+
+    output = []
+
+    if root is not None:
+        output += inorderTraversalRecursive(root.left)
+        output.append(root.val)
+        output += inorderTraversalRecursive(root.right)
+
+    return output
+        
