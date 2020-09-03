@@ -60,6 +60,7 @@ def inorderTraversal(self, root: TreeNode) -> List[int]:
     return output
 
 # my attempt (correct)
+# time and space complexity: O(n)
 def inorderTraversalRecursive(self, root: TreeNode) -> List[int]:
 
     output = []

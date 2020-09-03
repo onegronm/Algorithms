@@ -38,6 +38,9 @@
     <Compile Include="Arrays\LeetCode\SortedSquares.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Coursera\algorithms-part1\union-find\socialNetworkConnectivity.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Sorting\HackerRank\Medium\MinimumSwaps.py">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +76,9 @@
     <Folder Include="Arrays\HackerRank\Medium\" />
     <Folder Include="Arrays\InterviewCake\" />
     <Folder Include="Arrays\LeetCode\" />
+    <Folder Include="Coursera\" />
+    <Folder Include="Coursera\algorithms-part1\" />
+    <Folder Include="Coursera\algorithms-part1\union-find\" />
     <Folder Include="Trees and Graphs\" />
     <Folder Include="Sorting\" />
     <Folder Include="Sorting\HackerRank\" />
