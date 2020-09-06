@@ -49,56 +49,64 @@
 # implement and decide
 class QuickUnionUF:
 
-	id = []
+	arr = []
 	size = []
 
 	def __init__(self, n):
-		id = [0] * n
-		size = [0] * n
+		self.arr = [0] * n
+		self.size = [0] * n
 
 		for i in range(0,n):
-			id[i] = i
-			size[i] = 1
+			self.arr[i] = i
+			self.size[i] = 1
 
 	# find the root
-	def root(i):
-		while i is not d[i]: # when i == d[i], we have reached the root
-			i = id[i] # chase parent pointers until root is reached
+	def root(self, i):
+		while i is not self.arr[i]: # when i == d[i], we have reached the root
+			i = self.arr[i] # chase parent pointers until root is reached
 		return i;
 
-	def connected(p, q):
-		return root(p) is root(q)
+	def connected(self, p, q):
+		return self.root(p) is self.root(q)
 
-	def union(p, q):
+	def union(self, p, q):
 
-		if size[q] > size[p]:
-			id[root(p)] = root(q)
-			size[q] += size[p] # don't have to worry about counting nodes in root()! Size is updated in place
+		i = self.root(p)
+		j = self.root(q)
+
+		if self.size[j] >= self.size[i]:
+			self.arr[i] = j
+			self.size[j] += self.size[i] # don't have to worry about counting nodes in root()! Size is updated in place
 		else:
-			id[root(q)] = root(p)
-			size[p] += size[q]
+			self.arr[j] = i
+			self.size[i] += self.size[j]
 
-		if size[p] is n or size[q] is n:
+		if self.size[i] == n or self.size[j] == n:
 			return True
 		else:
 			return False
-
-n = 3
-log = [	
-	[0, 1, '2015-08-14 18:00:00'],
-	[1, 2, '2015-08-14 18:01:00'],
-	[2, 3, '2015-08-14 18:02:00']
-]
 
 def socialNetworkConnectivity(n, log):
 
 	u = QuickUnionUF(n)
 
 	for i in range(0, len(log)):
-		if not u.connected(log[0], log[1]):
-			if u.union(log[0],log[1]):
-				return log[2] # return earlist time all nodes connected
+		p = log[i][0]
+		q = log[i][1]
+		t = log[i][2]
+		if not u.connected(p, q):
+			if u.union(p, q):
+				print(t) # return earlist time all nodes connected
 			
+
+n = 4
+log = [	
+	[0, 1, '2015-08-14 18:00:00'],
+	[1, 2, '2015-08-14 18:01:00'],
+	[2, 3, '2015-08-14 18:02:00']
+]
+
+socialNetworkConnectivity(n, log)
 
 		
 
