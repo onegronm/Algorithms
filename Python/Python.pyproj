@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Coursera\algorithms-part1\union-find\socialNetworkConnectivity.py</StartupFile>
+    <StartupFile>Math\NthFibonacci.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -39,6 +39,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Coursera\algorithms-part1\union-find\socialNetworkConnectivity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Math\NthFibonacci.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Sorting\HackerRank\Medium\MinimumSwaps.py">
@@ -79,6 +82,7 @@
     <Folder Include="Coursera\" />
     <Folder Include="Coursera\algorithms-part1\" />
     <Folder Include="Coursera\algorithms-part1\union-find\" />
+    <Folder Include="Math\" />
     <Folder Include="Trees and Graphs\" />
     <Folder Include="Sorting\" />
     <Folder Include="Sorting\HackerRank\" />

@@ -32,7 +32,6 @@
 # because we want to keep a m log n running time
 # we need to use a weighted QU by size or by height
 
-
 # QU requires the following operations:
 # initialize(p,q)
 # connected(p,q)
@@ -45,8 +44,13 @@
 # or...
 # after each union, check the number of connected components
 # if only one is left, then all nodes are connected
+# chose the latter
 
-# implement and decide
+# time M log n
+# depth of any node is at most log N
+# size of the tree containing X at least doubles with each merge
+# can double at most lg n times before we run out of nodes
+# n space (N + M) or (N + N) = 2N = O(N)
 class QuickUnionUF:
 
 	arr = []
@@ -100,7 +104,7 @@ def socialNetworkConnectivity(n, log):
 			
 
 n = 4
-log = [	
+log = [
 	[0, 1, '2015-08-14 18:00:00'],
 	[1, 2, '2015-08-14 18:01:00'],
 	[2, 3, '2015-08-14 18:02:00']
