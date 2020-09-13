@@ -38,6 +38,9 @@
     <Compile Include="Arrays\LeetCode\SortedSquares.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Backtracking\Permutations.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Coursera\algorithms-part1\union-find\socialNetworkConnectivity.py">
       <SubType>Code</SubType>
     </Compile>
@@ -68,6 +71,9 @@
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreeInOrder.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\BinaryTreePostOrder.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreePreOrder.py">
       <SubType>Code</SubType>
     </Compile>
@@ -83,6 +89,7 @@
     <Folder Include="Coursera\algorithms-part1\" />
     <Folder Include="Coursera\algorithms-part1\union-find\" />
     <Folder Include="Math\" />
+    <Folder Include="Backtracking\" />
     <Folder Include="Trees and Graphs\" />
     <Folder Include="Sorting\" />
     <Folder Include="Sorting\HackerRank\" />

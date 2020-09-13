@@ -9,7 +9,9 @@ class TreeNode(object):
 # approach 1: iterative
 # deferred nodes are stored in a stack
 # time complexity: O(n) where n is the number of nodes.
-# space complexity: O(n) 
+# space complexity: O(n) where n is the number of nodes.
+# there is an optimized solution O(H) where H is the height of the tree
+# check https://www.geeksforgeeks.org/iterative-preorder-traversal/
 def preOrderTraversalIterative(root):
 	"""
     :type root: TreeNode
