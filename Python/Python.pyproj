@@ -71,6 +71,9 @@
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreeInOrder.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\BinaryTreeLevelOrder.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreePostOrder.py">
       <SubType>Code</SubType>
     </Compile>
