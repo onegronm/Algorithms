@@ -80,6 +80,9 @@
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreePreOrder.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\Recursion\isSymmetric.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Trees and Graphs\LeetCode\Recursion\maximumDepth.py">
       <SubType>Code</SubType>
     </Compile>

@@ -22,4 +22,17 @@ def maxDepth(self, root):
 
 	helper(root, 0)
 	return len(levels)
-	
+
+# time O(n)
+# space O(n) in worst case for skewed tree (only left nodes).
+# best case, tree is completely balanced, the height of the tree would be log N.
+# therefore space would be O(log N)
+def maxDepthSolution(self, root):
+
+	if root is None:
+		return 0
+
+	left_height = self.maxDepth(root.left)
+	right_height = self.maxDepth(root.right)
+
+	return max(left_height, right_height) + 1  # going from bottom up, passing 1 that belongs to the parent above. Counting of levels happens going up.
