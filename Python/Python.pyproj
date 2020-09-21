@@ -86,6 +86,9 @@
     <Compile Include="Trees and Graphs\LeetCode\Recursion\maximumDepth.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\Recursion\pathSum.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Arrays\" />
