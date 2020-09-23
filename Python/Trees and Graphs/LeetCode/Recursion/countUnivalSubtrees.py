@@ -1,6 +1,5 @@
 # https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/538/
 
-
 # intuition:
 # visit each node
 # keep track of repeated values with a sum variable
@@ -47,7 +46,7 @@ def countUnivalSubtreesSolution(self, root: TreeNode) -> int:
         if not node.left and not node.right:
             # found a univalue subtree - increment
             self.count += 1 # <<< using a global variable to keep track of count
-            return True
+            return True # <<<< helper function returns a boolean
 
         is_Uni = True
 
@@ -64,7 +63,36 @@ def countUnivalSubtreesSolution(self, root: TreeNode) -> int:
         return is_Uni
 
     self.count = 0
-    helper(root)	
+    helper(root) # <<< we don't need to store the result of helper for root
+
+    return self.count   
+
+
+# pass parent values
+def countUnivalSubtreesSolution2(self, root):
+
+    self.count = 0
+    helper(root, 0)
+    
+    def helper(node, val):
+
+        # base case. A null node is considered a valid subtree
+        if not node:
+            return True
+
+        # check if left and right are valid subtrees
+        # if either is not valid, then this node is not a subtree
+        # we don't really know what helper does yet, we are just checking
+        # if left and right are valid
+        if not helper(node.left, node.val) or not helper(node.right, node.val):
+            return False
+
+        # if all children are valid subtrees then I can add one to count for current node
+        self.count += 1
+
+        # this is the tricky part. If the current node has a value, how do we know
+        # if it's value. Imagine this is a leaf node.
+        # if the node has the same value as its parent
+        return node.val == val
 
     return self.count
-        
