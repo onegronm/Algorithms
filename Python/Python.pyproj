@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Math\NthFibonacci.py</StartupFile>
+    <StartupFile>Arrays\LeetCode\Medium\TwoSum.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +33,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Arrays\LeetCode\MaxConsecutiveOnes.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Arrays\LeetCode\Medium\ThreeSum.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Arrays\LeetCode\Medium\TwoSum.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Arrays\LeetCode\SortedSquares.py">
@@ -88,6 +94,7 @@
     <Folder Include="Arrays\HackerRank\Medium\" />
     <Folder Include="Arrays\InterviewCake\" />
     <Folder Include="Arrays\LeetCode\" />
+    <Folder Include="Arrays\LeetCode\Medium\" />
     <Folder Include="Coursera\" />
     <Folder Include="Coursera\algorithms-part1\" />
     <Folder Include="Coursera\algorithms-part1\union-find\" />
