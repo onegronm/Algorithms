@@ -86,6 +86,18 @@
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreePreOrder.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\Recursion\countUnivalSubtrees.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\Recursion\isSymmetric.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\Recursion\maximumDepth.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Trees and Graphs\LeetCode\Recursion\pathSum.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Arrays\" />
@@ -108,6 +120,7 @@
     <Folder Include="Trees and Graphs\InterviewCake\" />
     <Folder Include="Trees and Graphs\LeetCode\" />
     <Folder Include="Trees and Graphs\HackerRank\" />
+    <Folder Include="Trees and Graphs\LeetCode\Recursion\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
