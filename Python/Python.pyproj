@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\LeetCode\Medium\TwoSum.py</StartupFile>
+    <StartupFile>Arrays\LeetCode\TwoSumII.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -38,10 +38,13 @@
     <Compile Include="Arrays\LeetCode\Medium\ThreeSum.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Arrays\LeetCode\Medium\TwoSum.py">
+    <Compile Include="Arrays\LeetCode\TwoSum.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Arrays\LeetCode\SortedSquares.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Arrays\LeetCode\TwoSumII.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Backtracking\Permutations.py">

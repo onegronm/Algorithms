@@ -24,13 +24,12 @@ def countUnivalSubtrees(self, root):
 		
 		rightsum = helper(node.right, node.val)
 
-		if rightSum > 0 and 
 
 		if node.left and node.left.val == node.val:
-		   sum += helper(node.left) + 1:
+		   sum += helper(node.left) + 1
 
 		if node.right and node.right.val == node.val:
-		   sum += helper(node.right) + 1:
+		   sum += helper(node.right) + 1
 
 		return sum
 
