@@ -2,7 +2,8 @@
 # https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 from typing import List
 
-
+# time O(n)
+# space O(n)
 def TwoSum(numbers: List[int], target: int) -> List[int]:
 
 	if not numbers or len(numbers) == 1:
@@ -16,7 +17,7 @@ def TwoSum(numbers: List[int], target: int) -> List[int]:
 			if i+1 < len(numbers) and numbers[i+1] == numbers[i]:
 				hashMap[numbers[i]] = i + 1 # if this number repeats, use the second index
 			else:
-				hashMap[numbers[i]] = i # if there are repeated numbers, we only care of the first index
+				hashMap[numbers[i]] = i
 
 	for i in range(0, len(numbers)):
 
