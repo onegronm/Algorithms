@@ -23,8 +23,25 @@ class ThreeInOneFixedDivision:
 		self.sizes[stack] += 1 # increment sizes array
 		self.values[self.indexOfTop(stack)] += value
 
+	def pop(self, stack):
+		if self.isEmpty(stack):
+			raise Exception("Stack is empty.")
+
+		topValue = self.values[self.indexOfTop(stack)]
+
+		self.values[self.indexOfTop(stack)] = 0
+		self.sizes[stack] -= 1
+
+		return topValue
+
+	def peek(self, stack):
+		return self.values[self.indexOfTop(stack)]
+
 	def isFull(self, stack):
 		return self.sizes[stack] == self.stackCapacity
+
+	def isEmpty(self, stack):
+		return self.sizes[stack] == 0
 
 	def indexOfTop(self, stack):
 		offSet = stack * self.stackCapacity
@@ -41,4 +58,10 @@ stacks.push(1,42)
 stacks.push(2,54)
 stacks.push(2,81)
 stacks.push(2,63)
+print(stacks.peek(0))
+print(stacks.peek(1))
+print(stacks.peek(2))
+print(stacks.pop(2))
+print(stacks.pop(2))
+print(stacks.pop(2))
 print(stacks)
