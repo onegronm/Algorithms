@@ -84,6 +84,9 @@
     <Compile Include="Stacks and Queues\CTCI\ThreeInOne.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Stacks and Queues\CTCI\ThreeInOneFlexible.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreeInOrder.py">
       <SubType>Code</SubType>
     </Compile>
