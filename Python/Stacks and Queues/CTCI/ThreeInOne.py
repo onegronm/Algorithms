@@ -6,6 +6,8 @@
 # shift stacks around
 # circular array
 
+# difficulty: easy
+
 # Approach 1: fixed division
 class ThreeInOneFixedDivision:
 
@@ -14,7 +16,7 @@ class ThreeInOneFixedDivision:
 		self.numberOfStacks = 3
 		self.stackCapacity = stackSize
 		self.sizes = [0] * 3
-		self.values = [0] * stackSize * self.numberOfStacks		
+		self.values = [0] * stackSize * self.numberOfStacks
 		
 	def push(self, stack, value):
 		if self.isFull(stack):

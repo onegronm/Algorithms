@@ -2,6 +2,7 @@
 # you could be responsible for writing pseudocode or implementing only certain components
 
 # same as N stack problem
+# difficulty: HARD
 
 class MultiStack:
 
@@ -69,6 +70,26 @@ class MultiStack:
 		def expand(self, stackNumber):
 			self.shift((stackNumber + 1) % len(self.values)) # TODO
 			self.info[stackNumber].capacity += 1
+
+		def shift(self, stackNumber):
+
+			# if this stack is at full capacity, then move next stack by one element and claim freed space
+			stack = self.info[stackNumber]
+
+			if stack.isFull():
+				nextStack = (stackNumber + 1) % len(self.values)
+				shift(nextStack)
+				# claim space
+				stack.capacity += 1
+
+			index = stack.lastCapacityIndex()
+			while stack.isWithinStackCapacity(index):
+				self.values[index] = self.values[self.previousIndex(index)]
+				index = self.previousIndex(index)
+
+			self.values[stack.start] = 0
+			stack.start = self.nextIndex(stack.start)
+			stack.capacity -= 1
 
 
 
