@@ -5,7 +5,7 @@
 
 # approach: keep a separate stack with the minimum values
 
-class StackMin:
+class MinStack:
 
 	class Stack:		
 
@@ -45,7 +45,7 @@ class StackMin:
 	def push(self, value):
 		self.stack.push(value)
 
-		if self.minValuesStack.isEmpty() or value < self.minValuesStack.peek():
+		if self.minValuesStack.isEmpty() or value <= self.minValuesStack.peek():
 			self.minValuesStack.push(value)
 
 	def pop(self):
@@ -54,11 +54,16 @@ class StackMin:
 		if value == self.minValuesStack.peek():
 			self.minValuesStack.pop()
 
-	def minimum(self):
+	def getMin(self):
 		return self.minValuesStack.peek()
 
+	def top(self):
+		return self.stack.peek()
 
-stack = StackMin()
+
+stack = MinStack()
+
+# input 1
 stack.push(8)
 stack.push(4)
 stack.push(6)
@@ -66,17 +71,26 @@ stack.push(2)
 stack.push(5)
 stack.push(6)
 stack.push(1)
-print(stack.minimum())
+print(stack.getMin())
 stack.pop()
-print(stack.minimum())
+print(stack.getMin())
 stack.pop()
-print(stack.minimum())
+print(stack.getMin())
 stack.pop()
-print(stack.minimum())
+print(stack.getMin())
 stack.pop()
-print(stack.minimum())
+print(stack.getMin())
 stack.pop()
-print(stack.minimum())
+print(stack.getMin())
 stack.pop()
-print(stack.minimum())
+print(stack.getMin())
 stack.pop()
+
+# input 2
+stack = MinStack()
+stack.push(0)
+stack.push(1)
+stack.push(0)
+stack.getMin()
+stack.pop()
+stack.getMin()
