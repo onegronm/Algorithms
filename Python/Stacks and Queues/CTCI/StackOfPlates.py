@@ -1,5 +1,6 @@
 # also in LeetCode: https://leetcode.com/problems/dinner-plate-stacks/
 # difficulty: hard
+import heapq
 
 class DinnerPlates:
 
@@ -93,7 +94,70 @@ class DinnerPlates:
         return result
 
 
-D = DinnerPlates(2)
+# I could not figure out how to find the left-most or right-most available stack in constant time
+# it I were to save the position of non-empty stacks in a list, I would need to sort them by index
+# use a stack? a hash-map?
+# leaning towards a stack but how to keep the correct order?
+# A: use a heap queue algorithm, also known as the priority queue algorithm.
+
+class DinnerPlatesSolution:
+
+    def __init__(self, capacity: int):
+        self.stacks = []
+        self.q = [] # record the available stack, will use heap to quickly find the smallest available stack
+        self.c = capacity
+
+    # pushes the given integer val into the leftmost stack with size less than capacity
+    def push(self, val: int) -> None:
+
+        # To push, we need to find the leftmost available position
+        # first, let's remove any stacks on the left that are full
+        # 1) self.q: if there is still available stack to insert plate
+        # 2) self.q[0] < len(self.stacks): the leftmost available index self.q[0] is smaller than the current size of the stacks
+        # 3) len(self.stacks[self.q[0]]) == self.c: the stack has reached full capacity
+        while self.q and self.q[0] < len(self.stacks) and len(self.stacks[self.q[0]]) == self.c:
+            # we remove the filled stack from the queue of available stacks
+            heapq.heappop(self.q)
+        
+        # if self.q is empty, there are no available stacks to insert plate
+        if not self.q:
+            # open up a new stack to insert
+            heapq.heappush(self.q, len(self.stacks))
+
+        # for the newly added stack, add a new stack to self.stacks accordingly
+        if self.q[0] == len(self.stacks):
+            self.stacks.append([])
+
+        # append the value to the leftmost available stack
+        # (first item in the heap queue is the smallest)
+        self.stacks[self.q[0]].append(val)
+
+    def pop(self) -> int:
+
+        # first remove all empty stacks to find the right most stack
+        while self.stacks and not self.stacks[-1]:
+            self.stacks.pop()
+
+         # now we reach the right most stack
+        return self.popAtStack(len(self.stacks)-1)
+
+    def popAtStack(self, index: int) -> int:
+
+        # if the index is valid
+        if 0 <= index < len(self.stacks) and self.stacks[index]:
+            # add this stack to the list of available
+            heapq.heappush(self.q, index)
+
+            # pop and return the value
+            return self.stacks[index].pop()
+
+        # there's no stack available so return -1
+        return -1
+
+
+        
+
+D = DinnerPlatesSolution(2)
 D.push(1)
 D.push(2)
 D.push(3)
@@ -115,7 +179,7 @@ print(D.pop()) # Returns -1. There are no stacks
 ["DinnerPlates","push","push","push","push","push","popAtStack","push","push","popAtStack","popAtStack","pop","pop","pop","pop","pop"]
 [[2],[1],[2],[3],[4],[7],[8],[20],[21],[0],[2],[],[],[],[],[]]
 
-D = DinnerPlates(2)
+D = DinnerPlatesSolution(2)
 D.push(1)
 D.push(2)
 D.push(3)
@@ -136,7 +200,7 @@ print(D.pop())
 ["DinnerPlates","push","push","push","push","push","popAtStack","popAtStack","popAtStack","pop","pop","pop","pop","pop"]
 [[2],[1],[2],[3],[4],[5],[1],[1],[0],[],[],[],[],[]]
 
-D = DinnerPlates(2)
+D = DinnerPlatesSolution(2)
 D.push(1)
 D.push(2)
 D.push(3)
