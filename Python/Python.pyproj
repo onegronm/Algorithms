@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Stacks and Queues\CTCI\StackOfPlates.py</StartupFile>
+    <StartupFile>Stacks and Queues\CTCI\QueueViaStacks.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -79,6 +79,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FizzBuzz.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stacks and Queues\CTCI\QueueViaStacks.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Stacks and Queues\CTCI\StackMin.py">
