@@ -81,6 +81,9 @@
     <Compile Include="FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Stacks and Queues\CTCI\AnimalShelter.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Stacks and Queues\CTCI\QueueViaStacks.py">
       <SubType>Code</SubType>
     </Compile>
