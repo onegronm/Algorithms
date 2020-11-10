@@ -1,8 +1,8 @@
 from datetime import datetime
 from collections import deque
 
-class AnimalShelter:
-
+class AnimalShelter:	
+		
 	class Animal:
 		def __init__(self, name):
 			self.name = name
@@ -15,33 +15,58 @@ class AnimalShelter:
 	class Cat(Animal):
 		def __init__(self, name):
 			super().__init__(name)
-
-	def __init_(self):
-		self.dogQueue = deque()
-		self.catQueue = deque()
+						
+	def __init__(self):
+		self.dogs = deque()
+		self.cats = deque()
 
 	def enqueue(self, x: Animal) -> None:
 		"""
 		"""
-		if type(x) == type(Dog):
-			self.dogQueue.append(x)
-		elif type(x) == type(Cat):
-			self.catQueue.append(append)
-
+		if isinstance(x, self.Dog):
+			self.dogs.append(x)
+		elif isinstance(x, self.Cat):
+			self.cats.append(x)
 
 	def dequeueAny(self) -> Animal:		
 		"""
 		"""
-		if self.dogQueue[0].entryDate > self.catQueue[0].entryDate:
-			return self.dogQueue.popleft()
-		
-		return self.catQueue.popleft()
+		if len(self.dogs) == 0:
+			return self.cats.popleft()
+		elif len(self.cats) == 0:
+			return self.dogs.popleft()
+		elif self.dogs[0].entryDate > self.cats[0].entryDate:
+			return self.cats.popleft()
+		else:
+			return self.dogs.popleft()
 
 	def dequeueDog(self) -> Animal:
 		"""
 		"""
+		return self.dogs.popleft()
 
 	def dequeueCat(self) -> Animal:
 		"""
 		"""
+		return self.cats.popleft()
+
+shelter = AnimalShelter()
+dog = shelter.Dog("Spot")
+shelter.enqueue(dog)
+cat = shelter.Cat("Miko")
+shelter.enqueue(cat)
+dog = shelter.Dog("Skipper")
+shelter.enqueue(dog)
+cat = shelter.Cat("Nala")
+shelter.enqueue(cat)
+dog = shelter.Dog("Ceasar")
+shelter.enqueue(dog)
+cat = shelter.Cat("Biff")
+shelter.enqueue(cat)
+print(shelter.dequeueAny().name)
+print(shelter.dequeueCat().name)
+print(shelter.dequeueDog().name)
+print(shelter.dequeueAny().name)
+print(shelter.dequeueAny().name)
+print(shelter.dequeueAny().name)
 
