@@ -3,68 +3,128 @@
 # https://leetcode.com/problems/max-stack/
 # difficulty: medium
 
+# improvements
+# use another stack to track the state of highest values
+# need to sort?
+
+#class MaxStack(object):
+
+#    def __init__(self):
+#        """Initialize an empty stack"""
+#        self.items = []
+#        self.max = [] # stores the index of the max value
+
+#    def push(self, item):
+#        """Push a new item onto the stack"""
+#        self.items.append(item)
+
+#    def pop(self):
+#        """Remove and return the last item"""
+#        # If the stack is empty, return None
+#        # (it would also be reasonable to throw an exception)
+#        if not self.items:
+#            return None
+
+#        return self.items.pop()
+
+#    def top(self):
+#        """Return the last item without removing it"""
+#        if not self.items:
+#            return None
+
+#        return self.items[-1]
+
+#    def peekMax(self) -> int:
+#        """
+#        """
+#        if not self.items:
+#            return None
+
+#        self.findNextMax()
+
+#        return self.items[self.max[-1]]
+        
+
+#    def popMax(self) -> int:
+#        """
+#        """
+#        self.findNextMax()
+
+#        maxVal = self.items.pop(self.max.pop())
+
+#        return maxVal
+
+#    def findNextMax(self):
+
+#        self.max.clear()
+
+#        _max = self.items[0]
+
+#        # find the highest value in the items stack
+#        for i in range(0, len(self.items)):
+#            if self.items[i] >= _max:
+#                _max = self.items[i] 
+
+#        # add all indexes of max occurrence
+#        for i in range(0, len(self.items)):
+#            if self.items[i] == _max:
+#                self.max.append(i)
+
+# two-stacks solution
 class MaxStack(object):
 
     def __init__(self):
         """Initialize an empty stack"""
-        self.items = []
-        self.max = [] # stores the index of the max value
+        self.stack = []
+        self.maxStack = []
 
     def push(self, item):
         """Push a new item onto the stack"""
-        self.items.append(item)
+        max = item
+        if self.maxStack:
+            max = self.maxStack[-1]
+
+        if max > item:
+            self.maxStack.append(max) # <<< key for two-stack solution. If the item is not greater than max, we save max again in the second stack (greatest item is remembered)
+        else:
+            self.maxStack.append(item) 
+
+        self.stack.append(item)
+        
 
     def pop(self):
         """Remove and return the last item"""
-        # If the stack is empty, return None
-        # (it would also be reasonable to throw an exception)
-        if not self.items:
-            return None
+        self.maxStack.pop()
 
-        return self.items.pop()
+        return self.stack.pop()
 
     def top(self):
         """Return the last item without removing it"""
-        if not self.items:
-            return None
-
-        return self.items[-1]
+        return self.stack[-1]
 
     def peekMax(self) -> int:
         """
         """
-        if not self.items:
-            return None
-
-        self.findNextMax()
-
-        return self.items[self.max[-1]]
+        return self.maxStack[-1]
         
 
     def popMax(self) -> int:
         """
+        A third local stack is used as a buffer
         """
-        self.findNextMax()
+        max = self.peekMax()
+        buffer = []
 
-        maxVal = self.items.pop(self.max.pop())
+        while self.stack and self.top() != max:
+            buffer.append(self.pop())
 
-        return maxVal
+        self.pop()
 
-    def findNextMax(self):
+        while buffer:
+            self.push(buffer.pop())
 
-        self.max.clear()
+        return max
 
-        _max = self.items[0]
-
-        # find the highest value in the items stack
-        for i in range(0, len(self.items)):
-            if self.items[i] >= _max:
-                _max = self.items[i] 
-
-        # add all indexes of max occurrence
-        for i in range(0, len(self.items)):
-            if self.items[i] == _max:
-                self.max.append(i)
 
 print("Test 1:")
 ["MaxStack","push","push","push","top","popMax","top","peekMax","pop","top"]
