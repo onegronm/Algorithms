@@ -94,3 +94,11 @@ stack.push(0)
 stack.getMin()
 stack.pop()
 stack.getMin()
+
+
+
+stack = MinStack()
+stack.push(-3)
+stack.push(-2)
+print(stack.pop())
+print(stack.getMin())
