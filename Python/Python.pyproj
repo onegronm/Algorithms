@@ -105,6 +105,9 @@
     <Compile Include="Stacks and Queues\InterviewCake\LargestStack.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Stacks and Queues\InterviewCake\TwoStackQueue.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreeInOrder.py">
       <SubType>Code</SubType>
     </Compile>

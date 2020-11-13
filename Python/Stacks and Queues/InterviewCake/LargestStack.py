@@ -3,10 +3,11 @@
 # https://leetcode.com/problems/max-stack/
 # difficulty: medium
 
+# my first attempt:
 # improvements
 # use another stack to track the state of highest values
 # need to sort?
-
+# a: yes, use another stack
 #class MaxStack(object):
 
 #    def __init__(self):
@@ -71,7 +72,10 @@
 #                self.max.append(i)
 
 # two-stacks solution
-class MaxStack(object):
+# popMax O(N)
+# other ops O(1)
+# improvement: can we do popMax() in O(lg N) time?
+class MaxStack():
 
     def __init__(self):
         """Initialize an empty stack"""
@@ -116,14 +120,19 @@ class MaxStack(object):
         buffer = []
 
         while self.stack and self.top() != max:
-            buffer.append(self.pop())
+            buffer.append(self.pop()) # <<< call self.pop method not self.stack.pop()
 
         self.pop()
 
         while buffer:
-            self.push(buffer.pop())
+            self.push(buffer.pop()) # <<< call self.push not self.stack.append()
 
         return max
+
+
+
+
+
 
 
 print("Test 1:")
