@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Stacks and Queues\InterviewCake\IsValid.py</StartupFile>
+    <StartupFile>Sorting\LeetCode\IntersectionOfTwoArrays.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -81,6 +81,9 @@
     <Compile Include="FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Sorting\LeetCode\IntersectionOfTwoArrays.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Stacks and Queues\CTCI\AnimalShelter.py">
       <SubType>Code</SubType>
     </Compile>
@@ -153,6 +156,7 @@
     <Folder Include="Coursera\algorithms-part1\union-find\" />
     <Folder Include="Math\" />
     <Folder Include="Backtracking\" />
+    <Folder Include="Sorting\LeetCode\" />
     <Folder Include="Stacks and Queues\" />
     <Folder Include="Stacks and Queues\CTCI\" />
     <Folder Include="Stacks and Queues\InterviewCake\" />
