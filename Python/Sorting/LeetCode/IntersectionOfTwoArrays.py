@@ -1,7 +1,12 @@
+# https://leetcode.com/problems/intersection-of-two-arrays/
+
 import unittest
 from typing import List
 
 class Solution:
+    # my first attempt
+    # runtime: O(n log n)
+    # additional space: O(0)
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         """
         """
@@ -16,25 +21,18 @@ class Solution:
         a = 0
         b = 0
         
-        [1,1,2,2,2,2,3],[2,2,3]
-        while a < len(nums1) or b < len(nums2):
+        while a < len(nums1) and b < len(nums2):
 
-            # keep shifting pointers upwards if numbers repeat
-            while a > 0 and a < len(nums1) and nums1[a] == nums1[a - 1]:
-                a += 1
-
-            while b > 0 and b < len(nums2) and nums2[b] == nums2[b - 1]:
-                b += 1
-
-            if a == len(nums1)-1 or b == len(nums2)-1:
-                a += 1
-                b += 1
-                continue
-
-            if nums1[a] == nums2[b]:
+            if a < len(nums1) and b < len(nums2) and nums1[a] == nums2[b]:
                 result.append(nums1[a])
                 a += 1
                 b += 1
+
+                while a > 0 and a < len(nums1) and nums1[a] == nums1[a-1]:
+                    a += 1
+
+                while b > 0 and b < len(nums2) and nums2[b] == nums2[b-1]:
+                    b += 1            
 
             elif nums1[a] < nums2[b]:
                 # shift a upwards until it reaches b
@@ -72,5 +70,16 @@ class Test(unittest.TestCase):
         result = solution.intersection([1,2,2,1],[2,2])
         self.assertTrue(result[0] == 2)
         self.assertTrue(len(result) == 1)
+
+    def test_case_5(self):
+        solution = Solution()
+        result = solution.intersection([4,9,5],[9,4,9,8,4])
+        self.assertTrue(result[0] == 4)
+        self.assertTrue(result[1] == 9)
+        self.assertTrue(len(result) == 2)
+
+    def test_case_5(self):
+        solution = Solution()
+        result = solution.intersection([1],[1,2])
 
 unittest.main(verbosity=2)
