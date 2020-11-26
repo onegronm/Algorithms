@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Sorting\LeetCode\IntersectionOfTwoArrays.py</StartupFile>
+    <StartupFile>Coursera\algorithms-part1\4 sorting\IntersectionOfTwoArrays.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -50,13 +50,9 @@
     <Compile Include="Backtracking\Permutations.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Coursera\algorithms-part1\analysis-algorithms\searchBitonicArray.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Coursera\algorithms-part1\analysis-algorithms\ThreeSum.py" />
-    <Compile Include="Coursera\algorithms-part1\union-find\socialNetworkConnectivity.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Coursera\algorithms-part1\1 analysis-algorithms\searchBitonicArray.py" />
+    <Compile Include="Coursera\algorithms-part1\1 analysis-algorithms\ThreeSum.py" />
+    <Compile Include="Coursera\algorithms-part1\2 union-find\socialNetworkConnectivity.py" />
     <Compile Include="Math\NthFibonacci.py">
       <SubType>Code</SubType>
     </Compile>
@@ -81,7 +77,10 @@
     <Compile Include="FizzBuzz.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Sorting\LeetCode\IntersectionOfTwoArrays.py">
+    <Compile Include="Coursera\algorithms-part1\4 sorting\IntersectionOfTwoArrays.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Coursera\algorithms-part1\4 sorting\Permutation.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Stacks and Queues\CTCI\AnimalShelter.py">
@@ -152,8 +151,9 @@
     <Folder Include="Arrays\LeetCode\Medium\" />
     <Folder Include="Coursera\" />
     <Folder Include="Coursera\algorithms-part1\" />
-    <Folder Include="Coursera\algorithms-part1\analysis-algorithms\" />
-    <Folder Include="Coursera\algorithms-part1\union-find\" />
+    <Folder Include="Coursera\algorithms-part1\1 analysis-algorithms\" />
+    <Folder Include="Coursera\algorithms-part1\2 union-find\" />
+    <Folder Include="Coursera\algorithms-part1\4 sorting\" />
     <Folder Include="Math\" />
     <Folder Include="Backtracking\" />
     <Folder Include="Sorting\LeetCode\" />
