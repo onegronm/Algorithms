@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\MissingPositiveInteger.py</StartupFile>
+    <StartupFile>Arrays\LeetCode\Hard\MissingPositiveInteger.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -47,7 +47,7 @@
     <Compile Include="Arrays\LeetCode\TwoSumII.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Arrays\MissingPositiveInteger.py">
+    <Compile Include="Arrays\LeetCode\Hard\MissingPositiveInteger.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Backtracking\Permutations.py">
@@ -155,6 +155,7 @@
     <Folder Include="Arrays\InterviewCake\" />
     <Folder Include="Arrays\LeetCode\" />
     <Folder Include="Arrays\LeetCode\Medium\" />
+    <Folder Include="Arrays\LeetCode\Hard\" />
     <Folder Include="Coursera\" />
     <Folder Include="Coursera\algorithms-part1\" />
     <Folder Include="Coursera\algorithms-part1\1 analysis-algorithms\" />
