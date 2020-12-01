@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Arrays\LeetCode\Hard\MissingPositiveInteger.py</StartupFile>
+    <StartupFile>Coursera\algorithms-part1\5 mergesort\MergeSort.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -57,6 +57,9 @@
     <Compile Include="Coursera\algorithms-part1\1 analysis-algorithms\ThreeSum.py" />
     <Compile Include="Coursera\algorithms-part1\2 union-find\socialNetworkConnectivity.py" />
     <Compile Include="Coursera\algorithms-part1\4 sorting\SortColors.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Coursera\algorithms-part1\5 mergesort\MergeSort.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Math\NthFibonacci.py">
@@ -161,6 +164,7 @@
     <Folder Include="Coursera\algorithms-part1\1 analysis-algorithms\" />
     <Folder Include="Coursera\algorithms-part1\2 union-find\" />
     <Folder Include="Coursera\algorithms-part1\4 sorting\" />
+    <Folder Include="Coursera\algorithms-part1\5 mergesort\" />
     <Folder Include="Math\" />
     <Folder Include="Backtracking\" />
     <Folder Include="Sorting\LeetCode\" />

@@ -38,25 +38,50 @@ class Solution:
 
 	# second attempt
 	# Hint: think about how you would solve the problem in non-constant space. Can you apply that logic to the existing space?
-	def firstMissingPositive(self, arr:List[int]) -> int:
-		"""
-		"""
-		dict = {}
+	# 28 ms, faster than 93.88% of Python3 online submissions
+	#def firstMissingPositive(self, arr:List[int]) -> int:
+	#	"""
+	#	"""
+	#	dict = {}
 
-		for i in range(0,len(arr)):
-			val = arr[i]
-			if val not in dict.keys():
-				dict[val] = 1
+	#	for i in range(0,len(arr)):
+	#		val = arr[i]
+	#		if val not in dict.keys():
+	#			dict[val] = 1
 
-		loPosInt = 1
+	#	loPosInt = 1
 
-		for i in range(0,len(arr)):
-			if loPosInt in dict.keys():
-				loPosInt += 1
+	#	for i in range(0,len(arr)):
+	#		if loPosInt in dict.keys():
+	#			loPosInt += 1
+	#		else:
+	#			return loPosInt
+
+	#	return loPosInt
+
+	# solution
+	# uses the index as the key to put num[i] in the correct place
+	def firstMissingPositive(self, nums: List[int]) -> int:
+		i = 0
+		n = len(nums)
+		while i < n:
+			j = nums[i] - 1
+			# put num[i] to the correct place if nums[i] in the range [1, n]
+			if 0 <= j < n and nums[i] != nums[j]:
+				nums[i], nums[j] = nums[j], nums[i]
 			else:
-				return loPosInt
+				i += 1
 
-		return loPosInt
+		# so far, all the integers that could find their own correct place 
+		# have been put to the correct place, next thing is to find out the
+		# place that occupied wrongly
+		for i in range(n):
+			if nums[i] != i + 1:
+				return i + 1
+
+		return n + 1
+
+
 
 class Test(unittest.TestCase):
 
