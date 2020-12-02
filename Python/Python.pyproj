@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Coursera\algorithms-part1\5 mergesort\MergeSort.py</StartupFile>
+    <StartupFile>Sorting\LeetCode\MergeSortedArray.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -90,6 +90,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Coursera\algorithms-part1\4 sorting\Permutation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sorting\LeetCode\MergeSortedArray.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Stacks and Queues\CTCI\AnimalShelter.py">
