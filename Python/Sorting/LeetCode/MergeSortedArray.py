@@ -3,6 +3,8 @@
 import unittest
 from typing import List
 
+# O(m+n) time and O(m) additional space
+# improvement: use O(1) space by starting from the end of nums1
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
@@ -60,5 +62,3 @@ class Test(unittest.TestCase):
         self.assertListEqual(nums1, [1,2,2,3,5,6])
 
 unittest.main(verbosity=2)
-
-

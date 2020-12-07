@@ -59,6 +59,9 @@
     <Compile Include="Coursera\algorithms-part1\4 sorting\SortColors.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Coursera\algorithms-part1\5 mergesort\inversionCount.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Coursera\algorithms-part1\5 mergesort\MergeSort.py">
       <SubType>Code</SubType>
     </Compile>
