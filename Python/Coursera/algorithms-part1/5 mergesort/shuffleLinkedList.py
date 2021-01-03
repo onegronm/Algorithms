@@ -1,6 +1,8 @@
 # Given a singly-linked list containing n items, rearrange the items uniformly at random. Your algorithm should consume a logarithmic (or constant) amount of extra memory and run in time proportional to n log n in the worst case. 
 # difficulty: hard
 # related topics: shuffling, linked lists
+# Hint: design a linear-time subroutine that can take two uniformly shuffled linked lists of sizes 
+# n1 and n2 and combine them into a uniformly shuffled linked lists of size n_1 + n_2n
 # https://github.com/jsong00505/CodingStudy/blob/master/coursera/algorithms/part1/week3/mergesort/shuffling_linked_list.py
 import random
 
