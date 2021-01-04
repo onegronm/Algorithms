@@ -8,21 +8,39 @@
 # Nuts:  ! # $ % & ( ) * @ ^
 # Bolts: ! # $ % & ( ) * @ ^
 # Hint: modify the quicksort partitioning part of quicksort.
-# https://www.lintcode.com/problem/nuts-bolts-problem/description
 # https://github.com/nataliekung/leetcode/blob/master/qiang-hua-4-shuang-zhi-zhen-ff09/nuts-and-bolts-problem.md
 import unittest
 from typing import List, Tuple
 
 class NutsAndBolts:
 	
-	def __init__(self):
-		"""
-		"""
+	# 1. shuffle nuts and bolts for performance guarantee
+	# 2. partition the nuts returning the index of item in place.
+	# 3. partition the bolts using the index from step 1 as the pivot
+	# 4. repeat quick sort for lo to index
+	# 5. repeat quick sort for index + 1 to hi
 
 	def sortNutsAndBolts(self, nuts: List[str], bolts: List[str]) -> Tuple[List[str], List[str]]:
 		"""
 		"""
-		return [['!','#','$','%','&','(',')','*','@','^'], ['!','#','$','%','&','(',')','*','@','^']]
+		if not nuts or not bolts:
+			return
+
+		if len(nuts) != len(bolts):
+			return
+
+		# shuffle nuts
+		# shuffle bolts
+
+		return self.quickSort(nuts, bolts, 0, len(nuts)-1)
+
+	def quickSort(self, nuts:List[str], bolts:List[str], lo, hi) -> Tuple[List[str], List[str]]:
+		if hi <= lo: return
+		j = self.partition(nuts, bolts[lo], lo, hi)
+		self.partition(bolts, nuts[j], lo, hi) # use the index of the in-place element in nuts as pivot for partitioning bolts
+		self.quickSort(nuts, bolts, lo, j-1) # repeat for left side of pivot
+		self.quickSort(nuts, bolts, j, hi) # repeat for right side of pivot
+
 
 class Test(unittest.TestCase):
 	def test_1(self):
