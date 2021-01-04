@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Coursera\algorithms-part1\5 mergesort\shuffleLinkedList.py</StartupFile>
+    <StartupFile>Coursera\algorithms-part1\6 quicksort\NutsAndBolts.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -66,6 +66,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Coursera\algorithms-part1\5 mergesort\shuffleLinkedList.py" />
+    <Compile Include="Coursera\algorithms-part1\6 quicksort\NutsAndBolts.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Math\NthFibonacci.py">
       <SubType>Code</SubType>
     </Compile>
@@ -172,6 +175,7 @@
     <Folder Include="Coursera\algorithms-part1\2 union-find\" />
     <Folder Include="Coursera\algorithms-part1\4 sorting\" />
     <Folder Include="Coursera\algorithms-part1\5 mergesort\" />
+    <Folder Include="Coursera\algorithms-part1\6 quicksort\" />
     <Folder Include="Math\" />
     <Folder Include="Backtracking\" />
     <Folder Include="Sorting\LeetCode\" />
