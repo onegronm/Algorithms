@@ -29,8 +29,8 @@ class NutsAndBolts:
 		if len(nuts) != len(bolts):
 			return
 
-		# shuffle nuts
-		# shuffle bolts
+		# shuffle nuts for performance guarantee
+		# shuffle bolts for performance guarantee
 
 		return self.quickSort(nuts, bolts, 0, len(nuts)-1)
 
@@ -39,8 +39,32 @@ class NutsAndBolts:
 		j = self.partition(nuts, bolts[lo], lo, hi)
 		self.partition(bolts, nuts[j], lo, hi) # use the index of the in-place element in nuts as pivot for partitioning bolts
 		self.quickSort(nuts, bolts, lo, j-1) # repeat for left side of pivot
-		self.quickSort(nuts, bolts, j, hi) # repeat for right side of pivot
+		self.quickSort(nuts, bolts, j+1, hi) # repeat for right side of pivot
+		return nuts, bolts
 
+	def partition(self, a:List[str], pivot:int, lo, hi) -> int:
+		# search for pivot and move it to lo position
+		for i in range(0, len(a)):
+			if a[i] == pivot:
+				a[i], a[lo] = a[lo], a[i]
+
+		i = lo + 1
+		j = hi
+
+		while True:
+			while a[i] < a[lo]:
+				if i == hi: break # find item on left to swap
+				i += 1
+
+			while a[j] > a[lo]:
+				if j == lo: break # find item on right to swap
+				j -= 1
+
+			if i >= j: break # check if pointers cross
+			a[i], a[j] = a[j], a[i] # swap
+
+		a[lo], a[j] = a[j], a[lo] # swap with partitioning item
+		return j # return index of item known to be in place
 
 class Test(unittest.TestCase):
 	def test_1(self):
