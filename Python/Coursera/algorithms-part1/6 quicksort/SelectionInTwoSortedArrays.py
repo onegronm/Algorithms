@@ -15,8 +15,22 @@ class Selection:
 class Test(unittest.TestCase):
 	def test1(self):
 		s = Selection()
-		k = 5
-		r = s.findKthElement([],[],k)
-		self.assertEqual(r, 0)
+		r = s.findKthElement([2,3,6,7,9], [1,4,8,10], 5)
+		self.assertEqual(r, 6)
+
+	def test2(self):
+		s = Selection()
+		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 7)
+		self.assertEqual(r, 256)
+
+	def test3(self):
+		s = Selection()
+		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 2)
+		self.assertEqual(r, 86)
+
+	def test4(self):
+		s = Selection()
+		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 1)
+		self.assertEqual(r, 72)
 
 unittest.main(verbosity=2)
