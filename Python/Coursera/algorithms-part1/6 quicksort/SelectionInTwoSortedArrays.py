@@ -2,32 +2,58 @@
 # design an algorithm to find a key of rank k. The order of growth of the worst case running time of your algorithm 
 # should be log n, where n = n1 + n2
 # google (hard)
-# update: logarithmic runtime is tricky to implement and perhaps way more work than it would be expected in an interview
-# try to solve in linearithmic time
+# https://stackoverflow.com/questions/4607945/how-to-find-the-kth-smallest-element-in-the-union-of-two-sorted-arrays
+
 from typing import List
 import unittest
 
 class Selection:
 
-	def findKthElement(self, a:List[int], b:List[int], k:int) -> int:
-		if not a and not b: 
-			return
+	def findKthElement(self, arr1:List[int], arr2:List[int], k:int) -> int:
 
+		# logarithmic solution
+		# base case
+		if len(arr1) == 0:
+			return arr2[k]
+		if len(arr2) == 0:
+			return arr1[k]
+
+		median1 = len(arr1) // 2
+		median2 = len(arr2) // 2
+
+		if median1 + median2 < k - 1:
+			# case not enough elements to cover k
+			if arr1[median1] > arr2[median2]:
+				# case k cannot be in arr2[:median2], so search in arr1 and arr2[median2+1:]
+				return self.findKthElement(arr1, arr2[median2+1:], k - median2 - 1)
+			else:
+				# case k cannot be in arr1[:median1], so search in arr2 and arr1[median1+1:]
+				return self.findKthElement(arr1[median1+1:], arr2, k - median1 - 1)
+		else:
+			# case there are enough elements to cover k element
+			if arr1[median1] > arr2[median2]:
+				# case k cannot be in arr1[median1:], so search in arr1[:median1] and arr2
+				return self.findKthElement(arr1[:median1], arr2, k)
+			else:
+				# case k cannot be  in arr2[median2:], so search in arr2[:median1] and arr1
+				return self.findKthElement(arr1, arr2[:median2], k)
+		
+		# quick sort solution below
 		# merge both lists
-		arr = [0] * (len(a) + len(b))
+		#arr = [0] * (len(a) + len(b))
 
-		for i in range(0,len(a)):
-			arr[i] = a[i]
+		#for i in range(0,len(a)):
+		#	arr[i] = a[i]
 
-		i = 0
-		for j in range(len(a),len(arr)):
-			arr[j] = b[i]
-			i += 1
+		#i = 0
+		#for j in range(len(a),len(arr)):
+		#	arr[j] = b[i]
+		#	i += 1
 
-		# join both lists and do quicksort
-		self.quicksort(arr, 0, len(arr)-1)
+		## join both lists and do quicksort
+		#self.quicksort(arr, 0, len(arr)-1)
 
-		return arr[k-1]
+		#return arr[k-1]
 
 		#logarithmic attempt below (works on some cases)
 		#if k == 1 and not b: 
@@ -93,6 +119,11 @@ class Selection:
 		return j # return index of item known to be in place
 
 class Test(unittest.TestCase):
+	#def test0(self):
+	#	s = Selection()
+	#	r = s.findKthElement([2], [1], 2)
+	#	self.assertEqual(r, 2)
+
 	def test1(self):
 		s = Selection()
 		r = s.findKthElement([2,3,6,7,9], [1,4,8,10], 5)
