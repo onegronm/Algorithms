@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Coursera\algorithms-part1\6 quicksort\SelectionInTwoSortedArrays.py</StartupFile>
+    <StartupFile>Coursera\algorithms-part1\6 quicksort\DecimalDominants.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -66,6 +66,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Coursera\algorithms-part1\5 mergesort\shuffleLinkedList.py" />
+    <Compile Include="Coursera\algorithms-part1\6 quicksort\DecimalDominants.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Coursera\algorithms-part1\6 quicksort\NutsAndBolts.py">
       <SubType>Code</SubType>
     </Compile>
