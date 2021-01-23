@@ -12,16 +12,20 @@ class Selection:
 	def findKthElement(self, arr1:List[int], arr2:List[int], k:int) -> int:
 
 		# logarithmic solution
-		# base case
+
+		if len(arr1) == 0 and len(arr2) == 0:
+			return None
+
+		# base case: if length of one of the arrays is 0, the answer is kth element of the second array.
 		if len(arr1) == 0:
 			return arr2[k]
 		if len(arr2) == 0:
 			return arr1[k]
+		
+		median1 = (len(arr1) // 2)
+		median2 = (len(arr2) // 2)
 
-		median1 = len(arr1) // 2
-		median2 = len(arr2) // 2
-
-		if median1 + median2 < k - 1:
+		if median1 + median2 < k:
 			# case not enough elements to cover k
 			if arr1[median1] > arr2[median2]:
 				# case k cannot be in arr2[:median2], so search in arr1 and arr2[median2+1:]
@@ -119,44 +123,44 @@ class Selection:
 		return j # return index of item known to be in place
 
 class Test(unittest.TestCase):
-	#def test0(self):
-	#	s = Selection()
-	#	r = s.findKthElement([2], [1], 2)
-	#	self.assertEqual(r, 2)
+	def test0(self):
+		s = Selection()
+		r = s.findKthElement([2], [1], 2 - 1) # third argument is k - 1
+		self.assertEqual(r, 2)
 
 	def test1(self):
 		s = Selection()
-		r = s.findKthElement([2,3,6,7,9], [1,4,8,10], 5)
+		r = s.findKthElement([2,3,6,7,9], [1,4,8,10], 5 - 1)
 		self.assertEqual(r, 6)
 
 	def test2(self):
 		s = Selection()
-		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 7)
+		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 7 - 1)
 		self.assertEqual(r, 256)
 
 	def test3(self):
 		s = Selection()
-		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 2)
+		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 2 - 1)
 		self.assertEqual(r, 86)
 
 	def test4(self):
 		s = Selection()
-		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 1)
+		r = s.findKthElement([100,112,256,349,770], [72,86,113,119,265,445,892], 1 - 1)
 		self.assertEqual(r, 72)
 
 	def test5(self):
 		s = Selection()
-		r = s.findKthElement([1], [], 1)
+		r = s.findKthElement([1], [], 1 - 1)
 		self.assertEqual(r, 1)
 
 	def test6(self):
 		s = Selection()
-		r = s.findKthElement([],[], 1)
+		r = s.findKthElement([],[], 1 - 1)
 		self.assertEqual(r, None)
 
 	def test7(self):
 		s = Selection()
-		r = s.findKthElement([1,2,3,4,5],[6,7,8,9,10], 5)
+		r = s.findKthElement([1,2,3,4,5],[6,7,8,9,10], 5 - 1)
 		self.assertEqual(r, 5)
 
 unittest.main(verbosity=2)
