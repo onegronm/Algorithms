@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Coursera\algorithms-part1\6 quicksort\DecimalDominants.py</StartupFile>
+    <StartupFile>Stacks and Queues\ReverseStack.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -141,6 +141,9 @@
     <Compile Include="Stacks and Queues\InterviewCake\TwoStackQueue.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Stacks and Queues\ReverseStack.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreeInOrder.py">
       <SubType>Code</SubType>
     </Compile>
@@ -188,6 +191,7 @@
     <Folder Include="Stacks and Queues\" />
     <Folder Include="Stacks and Queues\CTCI\" />
     <Folder Include="Stacks and Queues\InterviewCake\" />
+    <Folder Include="Strings\" />
     <Folder Include="Trees and Graphs\" />
     <Folder Include="Sorting\" />
     <Folder Include="Sorting\HackerRank\" />
