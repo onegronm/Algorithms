@@ -12,17 +12,17 @@ class Solution:
 		if len(arr) == 1 or not arr:
 			return 0
 
-		lo = arr[0]
-		hi = arr[0]
+		lo = 0
+		hi = 0
 		maxProfit = 0
 
 		for i in range(1, len(arr)):
-			if arr[i] < lo:
-				lo = hi = arr[i]
-			elif arr[i] > hi:
-				hi = arr[i]
-
-		maxProfit = hi - lo
+			if arr[i] < arr[lo]:
+				lo = hi = i
+			elif arr[i] > arr[hi]:
+				hi = i
+				profit = arr[hi] - arr[lo]
+				if profit > maxProfit: maxProfit = profit
 
 		if maxProfit < 0 : maxProfit = 0
 
@@ -65,4 +65,14 @@ class Test(unittest.TestCase):
 		arr = []
 		self.assertTrue(s.maxProfit(arr) == 0)
 
+	def test_8(self):
+		s = Solution()
+		arr = [2,4,1]
+		self.assertTrue(s.maxProfit(arr) == 2)
+
+	def test_9(self):
+		s = Solution()
+		arr = [3,2,6,5,0,3]
+		self.assertTrue(s.maxProfit(arr) == 4)
+		
 unittest.main(verbosity=2)
