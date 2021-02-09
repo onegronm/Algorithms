@@ -71,3 +71,20 @@ class Test(unittest.TestCase):
 
 
 unittest.main(verbosity=2)
+
+
+[10,20,30,40,50,60,70] [15,25,35,45]
+[10,15,20,25,30,35,40,45,50,60,70]
+[35]
+
+# the median will have 5 on the left and 5 on the right
+# 40 
+# 40 has 3 elements on its left
+# median + 1 is 35 < 40 so that would 6 on the left so not the median
+# so is 35 the median?
+# 35 has two elements on its left on the right array
+# that means the third element on the left array must be less than 35
+# the fourth element must be greater than 35
+# if so, then we have found the median
+
+
