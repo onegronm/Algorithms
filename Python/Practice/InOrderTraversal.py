@@ -19,17 +19,39 @@ class TreeNode:
 class Solution:
 	"""
 	"""
+	#recursive
+	#def traverse(self, node: TreeNode) -> List[int]:
+	#	output = []
+
+	#	if not node:
+	#		return []
+
+	#	output += self.traverse(node.left)
+	#	output.append(node.val)
+	#	output += self.traverse(node.right)
+
+	#	return output
+
+	#iterative
 	def traverse(self, node: TreeNode) -> List[int]:
+		"""
+		"""
 		output = []
+		stack = []
 
-		if not node:
-			return []
+		self.addLeftToStack(node, stack)
 
-		output += self.traverse(node.left)
-		output.append(node.val)
-		output += self.traverse(node.right)
+		while stack:
+			root = stack.pop()
+			output.append(root.val)
+			self.addLeftToStack(root.right, stack)
 
 		return output
+
+	def addLeftToStack(self, root: TreeNode, stack: List[TreeNode]):
+		while root:
+			stack.append(root)
+			root = root.left
 
 class Test(unittest.TestCase):
 
