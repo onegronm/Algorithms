@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Strings\InterviewCake\PermutationPalindrome.py</StartupFile>
+    <StartupFile>Practice\GetClosingParen.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -82,6 +82,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Math\NthFibonacci.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Practice\GetClosingParen.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Practice\InOrderTraversal.py">
