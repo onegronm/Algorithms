@@ -18,25 +18,37 @@ class Solution():
 		# if the number of characters is uneven, each character must exist in equal amount, except maybe one
 		# we only need to know if a character appears an even or odd number of times
 		# if odd, no more than one of the caracters appears an odd number of times
-		characterCount = {}
-
-		for i in range(0, len(input)):
-			key = input[i]
-			if key in characterCount:
-				characterCount[key] += 1
-			else:
-				characterCount[key] = 1
-
-		oddCounts = 0
-		for k in characterCount.keys():
-			if characterCount[k] % 2 != 0:
-				oddCounts += 1
 		
-		if len(input) % 2 == 0 and oddCounts > 0:
-			isPalindrome = False
+		# simpler solution using a set
+		characterSet = set()
 
-		if len(input) % 2 != 0 and oddCounts > 1:
-			isPalindrome = False
+		for char in input:
+			if char not in characterSet:
+				characterSet.add(char)
+			else:
+				characterSet.remove(char)
+
+		return len(characterSet) <= 1
+		# first attempt
+		#characterCount = {}
+
+		#for i in range(0, len(input)):
+		#	key = input[i]
+		#	if key in characterCount:
+		#		characterCount[key] += 1
+		#	else:
+		#		characterCount[key] = 1
+
+		#oddCounts = 0
+		#for k in characterCount.keys():
+		#	if characterCount[k] % 2 != 0:
+		#		oddCounts += 1
+		
+		#if len(input) % 2 == 0 and oddCounts > 0:
+		#	isPalindrome = False
+
+		#if len(input) % 2 != 0 and oddCounts > 1:
+		#	isPalindrome = False
 
 		return isPalindrome
 
