@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>2f6406d6-a196-47d1-ab9a-13ca3c343044</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Practice\GetClosingParen.py</StartupFile>
+    <StartupFile>Strings\IsPalindrome.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -157,6 +157,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Strings\InterviewCake\PermutationPalindrome.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Strings\IsPalindrome.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Trees and Graphs\LeetCode\BinaryTreeInOrder.py">
